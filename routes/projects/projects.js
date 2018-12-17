@@ -18,7 +18,6 @@ const table_cross_cols = [['addrId','name'],
 						   {fkey:'fitmentId', table: 'fitmenttype', cols: [ 'ftId', 'name' ]},	// 可能的错误：关联表需要额外where条件
 						   'hlSquare','picture1']
 						 ];	
-
 var table_cross1_value_column_as = []; 	//'table_cross_value_column'; // 返回值列一一对应上面的查询列，在运行后填充，为：表名+双下划线+列名，如 area__name
 
 var table_cross_checked = false;
@@ -77,6 +76,24 @@ router.get('/', function(req, res, next) {
 		console.log('json sent over. ');
 	});
 	console.log("first here"); 
+});
+
+/* GET types listing. */
+router.get('/getbyid1', function(req, res, next) {
+	var retjson = {"code":0,"data":[]};
+	var cbfunc = function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
+		if(results.length > 0){
+			retjson.data = results;
+		}
+		//res.json(JSON.stringify(retjson));
+		res.send(JSON.stringify(retjson));
+        res.end('is over');
+		console.log('json sent over. ');
+	};
+	conn.queryOneById(req, table_name, cbfunc);
 });
 
 /* GET types listing. */
