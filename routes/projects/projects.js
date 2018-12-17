@@ -6,12 +6,12 @@ var conn = require('../common/database');
 const table_name = 'pkproject';
 const table_cols = ['pId','pName','status','minSquare','maxSquare','minPrice','maxPrice','countryId','proviceId','cityId','districtId','fullAddr','prightLimit','handoverYear','handoverMonth','handoverDay','canLoan','totalSquare','totalAmount','predictYearRent','localPricePic','picture1','picture2','picture3','thumbnail','','description'];
 
-const table_cross_fkey = [['countryId'],['pId']];	// ÒÔÏÂ4¸ö±äÁ¿µÄ³¤¶È±ØĞëÒ»ÖÂ£¡£¡£¡
-const table_cross_name = ['area','houselayout'];	// Ã¿¸ö²éÑ¯Íâ±ß£¬¶ÔÓ¦ÉÏÃæµÄÍâ¼ü×é ÒÔ¼° ÏÂÃæµÄ²éÑ¯ÁĞ
+const table_cross_fkey = [['countryId'],['pId']];	// ä»¥ä¸‹4ä¸ªå˜é‡çš„é•¿åº¦å¿…é¡»ä¸€è‡´ï¼ï¼ï¼
+const table_cross_name = ['area','houselayout'];	// æ¯ä¸ªæŸ¥è¯¢å¤–è¾¹ï¼Œå¯¹åº”ä¸Šé¢çš„å¤–é”®ç»„ ä»¥åŠ ä¸‹é¢çš„æŸ¥è¯¢åˆ—
 const table_cross_cols = [['addrId','name'],
 						  ['pId','livingroomNum','bedroomNum','bathroomNum','typeId','fitmentId','hlSquare','picture1']
-						 ];	// ²éÑ¯ÁĞ±ØĞëÒÔ¶ÔÓ¦Íâ¼üµÄID×÷ÎªµÚÒ»¸ö£¬ºóÃæÊÇ²éÑ¯µÄÖµÁĞ£¬²»ÏŞ¸öÊı
-const table_cross1_value_column_as = []; 	//'table_cross_value_column'; // ·µ»ØÖµÁĞÒ»Ò»¶ÔÓ¦ÉÏÃæµÄ²éÑ¯ÁĞ£¬ÔÚÔËĞĞºóÌî³ä£¬Îª£º±íÃû+Ë«ÏÂ»®Ïß+ÁĞÃû£¬Èç area__name
+						 ];	// æŸ¥è¯¢åˆ—å¿…é¡»ä»¥å¯¹åº”å¤–é”®çš„IDä½œä¸ºç¬¬ä¸€ä¸ªï¼Œåé¢æ˜¯æŸ¥è¯¢çš„å€¼åˆ—ï¼Œä¸é™ä¸ªæ•°
+const table_cross1_value_column_as = []; 	//'table_cross_value_column'; // è¿”å›å€¼åˆ—ä¸€ä¸€å¯¹åº”ä¸Šé¢çš„æŸ¥è¯¢åˆ—ï¼Œåœ¨è¿è¡Œåå¡«å……ï¼Œä¸ºï¼šè¡¨å+åŒä¸‹åˆ’çº¿+åˆ—åï¼Œå¦‚ area__name
 
 var table_cross_checked = false;
 
