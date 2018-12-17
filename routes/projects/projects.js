@@ -9,7 +9,8 @@ const table_cols = ['pId','pName','status','minSquare','maxSquare','minPrice','m
 const table_cross_fkey = [['countryId'],['pId']];	// 以下4个变量的长度必须一致！！！
 const table_cross_name = ['area','houselayout'];	// 每个查询外边，对应上面的外键组 以及 下面的查询列
 const table_cross_cols = [['addrId','name'],
-						  ['pId','','','','','','']];	// 查询列必须以对应外键的ID作为第一个，后面是查询的值列，不限个数
+						  ['pId','livingroomNum','bedroomNum','bathroomNum','typeId','fitmentId','hlSquare','picture1']
+						 ];	// 查询列必须以对应外键的ID作为第一个，后面是查询的值列，不限个数
 const table_cross1_value_column_as = []; 	//'table_cross_value_column'; // 返回值列一一对应上面的查询列，在运行后填充，为：表名+双下划线+列名，如 area__name
 
 var table_cross_checked = false;
