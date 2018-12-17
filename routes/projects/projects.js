@@ -30,6 +30,7 @@ function check_table_cross(){
 			table_cross1_value_column_as[i][j] = table_cross_name + '__' + table_cross_cols[i][j];
 		});
 	});
+	console.log("check_table_cross:  table_cross_name arrays checked !!! ");
 	table_cross_checked = true;
 	return true;
 }
