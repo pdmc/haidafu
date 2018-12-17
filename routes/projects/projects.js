@@ -4,7 +4,7 @@ var router = express.Router();
 var conn = require('../common/database');
 
 const table_name = 'pkproject';
-const table_cols = ['pId','pName','status','minSquare','maxSquare','minPrice','maxPrice','countryId','proviceId','cityId','districtId','fullAddr','prightLimit','handoverYear','handoverMonth','handoverDay','canLoan','totalSquare','totalAmount','predictYearRent','localPricePic','picture1','picture2','picture3','picture1'];
+const table_cols = ['pId','pName','status','minSquare','maxSquare','minPrice','maxPrice','countryId','proviceId','cityId','districtId','fullAddr','prightLimit','handoverYear','handoverMonth','handoverDay','canLoan','totalSquare','totalAmount','predictYearRent','localPricePic','picture1','picture2','picture3','thumbnail','','description'];
 
 /* GET types listing. */
 router.get('/', function(req, res, next) {
@@ -12,6 +12,35 @@ router.get('/', function(req, res, next) {
 	var sql = 'SELECT * FROM ' + table_name + '';
 	//
 	conn.query(sql,function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
+		var retjson = {"code":0,"data":[]};
+		if(results.length > 0){
+			retjson.data = results;
+		}
+		//res.json(JSON.stringify(retjson));
+		res.send(JSON.stringify(retjson));
+        res.end('is over');
+		console.log('json sent over. ');
+	});
+	console.log("first here"); 
+});
+
+/* GET types listing. */
+router.get('/getbyid', function(req, res, next) {
+ 	var rets = '';
+	var sql = 'SELECT * FROM ' + table_name + ' WHERE ' + table_cols[0] + ' = ?';
+	var sql_params = [0];
+	//
+	if(req.params && req.params[table_cols[0]]){
+		sql_params[0] = req.params[table_cols[0]];
+	}else if(req.query && req.query[table_cols[0]]){
+		sql_params[0] = req.query[table_cols[0]];
+	}else if(req.body && req.body[table_cols[0]]){
+		sql_params[0] = req.body[table_cols[0]];
+	}
+	conn.query(sql,sql_params,function(error, results, fields) {
 		if(error){
 			console.log(error);
 		}
