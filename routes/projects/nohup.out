@@ -1,0 +1,17 @@
+nohup: 忽略输入
+
+> haidafu@0.0.0 start /var/www/haidafu
+> node ./bin/www
+
+/var/www/haidafu/routes/projects/projects.js
+check_table_cross:  table_cross_name arrays checked !!! 
+[ [ 'area__addrId', 'area__name' ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+/var/www/haidafu/routes/common/database.js

@@ -4,12 +4,12 @@
 	"comment":"以下4个变量的长度必须一致！！！每个查询外边，对应上面的外键组 以及 下面的查询列。查询列必须以对应外键的ID作为第一个，后面是查询的值列，不限个数。2018.12.17 加入二级关联，在关联表中如果还有需要翻译的关联字段，则将这个字段翻译成对象，：{fkey: typeId, table: 'type', cols: [ 'id', 'name' ]}",
 	"cross_fkey":[['countryId'],['pId']];	
 	"cross_name": ['area','houselayout'];	
-	"table_cross_cols":[['addrId','name'],
+	"cross_cols":[['addrId','name'],
 						  ['pId','livingroomNum','bedroomNum','bathroomNum',
 						   {fkey:'typeId', table: 'housetype', cols: [ 'typeId', 'name' ]},	
 						   {fkey:'fitmentId', table: 'fitmenttype', cols: [ 'ftId', 'name' ]},	
 						   'hlSquare','picture1']
 						 ],
-	"table_cross1_value_column_as":[]
+	"cross1_value_column_as":[]
 }
 
