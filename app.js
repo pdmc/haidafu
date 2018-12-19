@@ -1,3 +1,9 @@
+/*
+ *	PK4YO Co. Ltd.
+ *  Author: Zhang Hui <spacetiller@163.com>
+ *  Time: 2018-12-19
+ *  All Copyrights Reserved.
+ */
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');

@@ -1,3 +1,9 @@
+/*
+ *	PK4YO Co. Ltd.
+ *  Author: Zhang Hui <spacetiller@163.com>
+ *  Time: Dec. 2018
+ *  All Copyrights Reserved.
+ */
 var express = require('express');
 var router = express.Router();
 //var app = express();

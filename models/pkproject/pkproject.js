@@ -1,3 +1,9 @@
+/*
+ *	PK4YO Co. Ltd.
+ *  Author: Zhang Hui <spacetiller@163.com>
+ *  Time: 2018-12-19
+ *  All Copyrights Reserved.
+ */
 //var express = require('express');
 
 function check_table_cross(){
