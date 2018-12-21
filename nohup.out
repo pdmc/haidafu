@@ -1,23 +1,15 @@
+nohup: 忽略输入
 
 > haidafu@0.0.0 start /var/www/haidafu
 > node ./bin/www
 
-/var/www/haidafu/routes/projects/projects.js
-check_table_cross:  table_cross_name arrays checked !!! 
-[ [ 'area__addrId', 'area__name' ],
-  [ 'houselayout__pId',
-    'houselayout__livingroomNum',
-    'houselayout__bedroomNum',
-    'houselayout__bathroomNum',
-    [ 'housetype__typeId', 'housetype__name' ],
-    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
-    'houselayout__hlSquare',
-    'houselayout__picture1' ] ]
-/var/www/haidafu/routes/common/database.js
+--- enter pool.queryList ---
 --- enter check_table_cross ---
 /var/www/haidafu/models/pkproject/pkproject.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'area__addrId', 'area__name' ],
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
   [ 'houselayout__pId',
     'houselayout__livingroomNum',
     'houselayout__bedroomNum',
@@ -27,6 +19,185 @@ check_table_cross:  this.table_cross_name arrays checked !!!
     'houselayout__hlSquare',
     'houselayout__picture1' ],
   [ 'prighttype__prId', 'prighttype__name' ] ]
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.proviceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area.addrId AS area__addrId, area.name AS area__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, area, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND pkproject.pId = ?
+a
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
 first here
-json sent over. 
+condition listing first here
+condition listing json sent over. 
+--- enter pool.queryList ---
+--- enter check_table_cross ---
+/var/www/haidafu/models/pkproject/pkproject.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+a
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+all listing first here
+all listing json sent over. 
+--- enter pool.queryList ---
+--- enter check_table_cross ---
+/var/www/haidafu/models/pkproject/pkproject.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+a
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+condition listing json sent over. 
+--- enter pool.queryList ---
+--- enter check_table_cross ---
+/var/www/haidafu/models/pkproject/pkproject.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+a
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+all listing first here
+all listing json sent over. 
+--- enter pool.queryList ---
+--- enter check_table_cross ---
+/var/www/haidafu/models/pkproject/pkproject.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+a
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+condition listing json sent over. 
+--- enter pool.queryList ---
+--- enter check_table_cross ---
+/var/www/haidafu/models/pkproject/pkproject.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+a
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+all listing first here
+all listing json sent over. 
+--- enter pool.queryList ---
+--- enter check_table_cross ---
+/var/www/haidafu/models/pkproject/pkproject.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+a
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+condition listing json sent over. 
+--- enter pool.queryList ---
+--- enter check_table_cross ---
+/var/www/haidafu/models/pkproject/pkproject.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+a
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+all listing first here
+all listing json sent over. 
+--- enter pool.queryList ---
+--- enter check_table_cross ---
+/var/www/haidafu/models/pkproject/pkproject.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+a
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+condition listing json sent over. 
