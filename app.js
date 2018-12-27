@@ -20,6 +20,7 @@ var reservationsRouter = require('./routes/reservations/reservations');
 var hongbaosRouter = require('./routes/hongbaos/hongbaos');
 var typesRouter = require('./routes/types/types');
 var fitmentsRouter = require('./routes/fitments/fitments');
+var prightsRouter = require('./routes/prights/prights');
 var areasRouter = require('./routes/areas/areas');
 
 var app = express();
@@ -75,6 +76,7 @@ app.use('/reservations', reservationsRouter);
 app.use('/hongbaos', hongbaosRouter);
 app.use('/types', typesRouter);
 app.use('/fitments', fitmentsRouter);
+app.use('/prights', prightsRouter);
 app.use('/areas', areasRouter);
 
 // catch 404 and forward to error handler

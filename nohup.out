@@ -1,11 +1,181 @@
-nohup: 忽略输入
 
 > haidafu@0.0.0 start /var/www/haidafu
 > node ./bin/www
 
---- enter pool.queryList ---
+/var/www/haidafu/models/pkuser/pkuser.js
 --- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+/var/www/haidafu/models/favorite/favorite.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+/var/www/haidafu/models/reservation/reservation.js
+--- enter check_table_cross ---
+[ [ 'pkactivity__actId' ] ]
+[ [ 'pkactivity__actId', 'pkactivity__subject' ] ]
+[ [ 'pkactivity__actId',
+    'pkactivity__subject',
+    'pkactivity__address' ] ]
+[ [ 'pkactivity__actId',
+    'pkactivity__subject',
+    'pkactivity__address',
+    'pkactivity__startTime' ] ]
+[ [ 'pkactivity__actId',
+    'pkactivity__subject',
+    'pkactivity__address',
+    'pkactivity__startTime',
+    'pkactivity__endTime' ] ]
+[ [ 'pkactivity__actId',
+    'pkactivity__subject',
+    'pkactivity__address',
+    'pkactivity__startTime',
+    'pkactivity__endTime',
+    'pkactivity__imgurl' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ 'pkactivity__actId',
+    'pkactivity__subject',
+    'pkactivity__address',
+    'pkactivity__startTime',
+    'pkactivity__endTime',
+    'pkactivity__imgurl' ] ]
+/var/www/haidafu/models/hongbao/hongbao.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+/var/www/haidafu/models/housetype/housetype.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+/var/www/haidafu/models/fitmenttype/fitmenttype.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+/var/www/haidafu/models/prighttype/prighttype.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+/var/www/haidafu/models/area/area.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter pool.queryList ---
 /var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
 [ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
     [ 'area__provinceId__addrId', 'area__provinceId__name' ],
@@ -19,37 +189,115 @@ check_table_cross:  this.table_cross_name arrays checked !!!
     'houselayout__hlSquare',
     'houselayout__picture1' ],
   [ 'prighttype__prId', 'prighttype__name' ] ]
-a
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
-first here
-condition listing first here
-condition listing json sent over. 
---- enter pool.queryList ---
---- enter check_table_cross ---
-/var/www/haidafu/models/pkproject/pkproject.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
-    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
-    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
-  [ 'houselayout__pId',
-    'houselayout__livingroomNum',
-    'houselayout__bedroomNum',
-    'houselayout__bathroomNum',
-    [ 'housetype__typeId', 'housetype__name' ],
-    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
-    'houselayout__hlSquare',
-    'houselayout__picture1' ],
-  [ 'prighttype__prId', 'prighttype__name' ] ]
-a
 --- enter __prepare_select_sql ---
 SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
 first here
 all listing first here
 all listing json sent over. 
 --- enter pool.queryList ---
---- enter check_table_cross ---
 /var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
 [ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
     [ 'area__provinceId__addrId', 'area__provinceId__name' ],
@@ -63,125 +311,115 @@ check_table_cross:  this.table_cross_name arrays checked !!!
     'houselayout__hlSquare',
     'houselayout__picture1' ],
   [ 'prighttype__prId', 'prighttype__name' ] ]
-a
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
-first here
-condition listing first here
-condition listing json sent over. 
---- enter pool.queryList ---
---- enter check_table_cross ---
-/var/www/haidafu/models/pkproject/pkproject.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
-    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
-    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
-  [ 'houselayout__pId',
-    'houselayout__livingroomNum',
-    'houselayout__bedroomNum',
-    'houselayout__bathroomNum',
-    [ 'housetype__typeId', 'housetype__name' ],
-    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
-    'houselayout__hlSquare',
-    'houselayout__picture1' ],
-  [ 'prighttype__prId', 'prighttype__name' ] ]
-a
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
-first here
-all listing first here
-all listing json sent over. 
---- enter pool.queryList ---
---- enter check_table_cross ---
-/var/www/haidafu/models/pkproject/pkproject.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
-    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
-    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
-  [ 'houselayout__pId',
-    'houselayout__livingroomNum',
-    'houselayout__bedroomNum',
-    'houselayout__bathroomNum',
-    [ 'housetype__typeId', 'housetype__name' ],
-    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
-    'houselayout__hlSquare',
-    'houselayout__picture1' ],
-  [ 'prighttype__prId', 'prighttype__name' ] ]
-a
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
-first here
-condition listing first here
-condition listing json sent over. 
---- enter pool.queryList ---
---- enter check_table_cross ---
-/var/www/haidafu/models/pkproject/pkproject.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
-    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
-    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
-  [ 'houselayout__pId',
-    'houselayout__livingroomNum',
-    'houselayout__bedroomNum',
-    'houselayout__bathroomNum',
-    [ 'housetype__typeId', 'housetype__name' ],
-    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
-    'houselayout__hlSquare',
-    'houselayout__picture1' ],
-  [ 'prighttype__prId', 'prighttype__name' ] ]
-a
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
-first here
-all listing first here
-all listing json sent over. 
---- enter pool.queryList ---
---- enter check_table_cross ---
-/var/www/haidafu/models/pkproject/pkproject.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
-    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
-    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
-  [ 'houselayout__pId',
-    'houselayout__livingroomNum',
-    'houselayout__bedroomNum',
-    'houselayout__bathroomNum',
-    [ 'housetype__typeId', 'housetype__name' ],
-    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
-    'houselayout__hlSquare',
-    'houselayout__picture1' ],
-  [ 'prighttype__prId', 'prighttype__name' ] ]
-a
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
-first here
-condition listing first here
-condition listing json sent over. 
---- enter pool.queryList ---
---- enter check_table_cross ---
-/var/www/haidafu/models/pkproject/pkproject.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
-    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
-    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
-  [ 'houselayout__pId',
-    'houselayout__livingroomNum',
-    'houselayout__bedroomNum',
-    'houselayout__bathroomNum',
-    [ 'housetype__typeId', 'housetype__name' ],
-    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
-    'houselayout__hlSquare',
-    'houselayout__picture1' ],
-  [ 'prighttype__prId', 'prighttype__name' ] ]
-a
 --- enter __prepare_select_sql ---
 SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
 first here
 all listing first here
 all listing json sent over. 
 --- enter pool.queryList ---
---- enter check_table_cross ---
 /var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
 [ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
     [ 'area__provinceId__addrId', 'area__provinceId__name' ],
@@ -195,9 +433,1936 @@ check_table_cross:  this.table_cross_name arrays checked !!!
     'houselayout__hlSquare',
     'houselayout__picture1' ],
   [ 'prighttype__prId', 'prighttype__name' ] ]
-a
 --- enter __prepare_select_sql ---
 SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
 first here
 condition listing first here
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+all listing json sent over. 
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+condition listing json sent over. 
+all listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
+condition listing json sent over. 
+--- enter pool.queryOneById ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE pkactivity.actId = ?
+first here
+get one by id first here
+one by id json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+all listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+condition listing json sent over. 
+--- enter pool.queryOneById ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE pkactivity.actId = ?
+first here
+get one by id first here
+one by id json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
+condition listing json sent over. 
+--- enter pool.queryOneById ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE pkactivity.actId = ?
+first here
+get one by id first here
+one by id json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+condition listing json sent over. 
+all listing json sent over. 
+--- enter pool.queryOneById ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE pkactivity.actId = ?
+first here
+get one by id first here
+one by id json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
+condition listing json sent over. 
+--- enter pool.queryOneById ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE pkactivity.actId = ?
+first here
+get one by id first here
+one by id json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
+condition listing json sent over. 
+--- enter pool.queryOneById ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE pkactivity.actId = ?
+first here
+get one by id first here
+one by id json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId', 'houselayout__livingroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ] ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId' ] ]
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+[ [ [ 'area__countryId__addrId', 'area__countryId__name' ],
+    [ 'area__provinceId__addrId', 'area__provinceId__name' ],
+    [ 'area__cityId__addrId', 'area__cityId__name' ] ],
+  [ 'houselayout__pId',
+    'houselayout__livingroomNum',
+    'houselayout__bedroomNum',
+    'houselayout__bathroomNum',
+    [ 'housetype__typeId', 'housetype__name' ],
+    [ 'fitmenttype__ftId', 'fitmenttype__name' ],
+    'houselayout__hlSquare',
+    'houselayout__picture1' ],
+  [ 'prighttype__prId', 'prighttype__name' ] ]
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
 condition listing json sent over. 

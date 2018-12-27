@@ -7,12 +7,12 @@
 var express = require('express');
 var router = express.Router();
 var conn = require('../common/database');
-var Activity = require('../../models/pkactivity/pkactivity.js');
+var Houselayout = require('../../models/houselayout/houselayout.js');
 
-var activity = new Activity();
+var houselayout = new Houselayout();
 
-const table_name = activity.table_name; //'pkproject';
-const table_cols = activity.table_cols; //'pkproject';
+const table_name = houselayout.table_name; //'pkproject';
+const table_cols = houselayout.table_cols; //'pkproject';
 
 //console.log(table_name);
 

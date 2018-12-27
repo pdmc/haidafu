@@ -7,12 +7,12 @@
 var express = require('express');
 var router = express.Router();
 var conn = require('../common/database');
-var Activity = require('../../models/pkactivity/pkactivity.js');
+var Prighttype = require('../../models/prighttype/prighttype.js');
 
-var activity = new Activity();
+var prighttype = new Prighttype();
 
-const table_name = activity.table_name; //'pkproject';
-const table_cols = activity.table_cols; //'pkproject';
+const table_name = prighttype.table_name; //'pkproject';
+const table_cols = prighttype.table_cols; //'pkproject';
 
 //console.log(table_name);
 

@@ -6,35 +6,73 @@
  */
 var express = require('express');
 var router = express.Router();
-//var app = express();
 var conn = require('../common/database');
+var Area = require('../../models/area/area.js');
 
-const table_name = 'area';
-const table_cols = ['addrId','parentId','name','level'];
+var area = new Area();
 
-/* GET types listing. */
+const table_name = area.table_name; //'pkproject';
+const table_cols = area.table_cols; //'pkproject';
+
+//console.log(table_name);
+
+/* GET all listing. */
 router.get('/', function(req, res, next) {
- 	var rets = '';
-	var sql = 'SELECT * FROM ' + table_name + '';
-	//
-	conn.query(sql,function(error, results, fields) {
+	var cbfunc = function(error, results, fields) {
 		if(error){
 			console.log(error);
 		}
 		var retjson = {"code":0,"data":[]};
-		if(results.length > 0){
+		if(results && results.length > 0){
 			retjson.data = results;
 		}
 		//res.json(JSON.stringify(retjson));
+        //res.end('is over');
 		res.send(JSON.stringify(retjson));
-        res.end('is over');
-		console.log('json sent over. ');
-	});
-	console.log("first here"); 
+		console.log('all listing json sent over. ');
+	};
+	conn.queryList(req, table_name, cbfunc);
+	console.log("all listing first here"); 
 });
 
+/* GET condition listing. */
+router.get('/getbycond', function(req, res, next) {
+	var retjson = {"code":0,"data":[]};
+	var cbfunc = function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
+		if(results.length > 0){
+			retjson.data = results;
+		}
+		res.send(JSON.stringify(retjson));
+		console.log('condition listing json sent over. ');
+	};
+	conn.queryList(req, table_name, cbfunc);
+	console.log("condition listing first here"); 
+});
+
+/* GET one . */
+router.get('/getbyid', function(req, res, next) {
+	var retjson = {"code":0,"data":[]};
+	var cbfunc = function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
+		if(results.length > 0){
+			retjson.data = results;
+		}
+		res.send(JSON.stringify(retjson));
+		console.log('one by id json sent over. ');
+	};
+	conn.queryOneById(req, table_name, cbfunc);
+	console.log("get one by id first here"); 
+});
+
+/* add one
+ *
+ */
 router.get('/add', function(req, res, next) {
- 	var rets = '';
 	var sql = 'insert into ' + table_name + ' set ?';
 	var post = {};
 
@@ -58,14 +96,13 @@ router.get('/add', function(req, res, next) {
 		}
 		var retjson = {"code":0,"msg":"ok"};
 		res.send(JSON.stringify(retjson));
-        res.end('is over');
-		console.log('Query add over ');
+        //res.end('is over');
+		console.log('sql add over ');
 	});
-	console.log("first here"); 
+	console.log("sql add first here"); 
 });
 
 router.get('/update', function(req, res, next) {
- 	var rets = '';
 	var sql = 'UPDATE ' + table_name + ' SET ' ;
 	var sql_params = ['',0];
 
@@ -121,16 +158,15 @@ router.get('/update', function(req, res, next) {
 		}
 		var retjson = {"code":0,"msg":"ok"};
 		res.send(JSON.stringify(retjson));
-        res.end('is over');
-		console.log('Query update over: ');
-		console.log('connected as id ' + conn.threadId);
+		console.log('sql update over: ');
+        //res.end('is over');
+		//console.log('connected as id ' + conn.threadId);
 		//conn.releaseConnection();
 	});
-	console.log("first here"); 
+	console.log("sql update first here"); 
 });
 
 router.get('/delete', function(req, res, next) {
- 	var rets = '';
 	var sql = 'delete from ' + table_name + ' WHERE ' + table_cols[0] + ' = ?';
 	var sql_params = [0];
 
@@ -147,11 +183,11 @@ router.get('/delete', function(req, res, next) {
 		}
 		var retjson = {"code":0,"msg":"ok"};
 		//res.json(JSON.stringify(retjson));
+        //res.end('is over');
 		res.send(JSON.stringify(retjson));
-        res.end('is over');
-		console.log('Query delete over ');
+		console.log('sql delete over ');
 	});
-	console.log("first here"); 
+	console.log("sql delete first here"); 
 });
 
 module.exports = router;
