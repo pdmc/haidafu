@@ -206,9 +206,9 @@ pool.addOne = function(req, table_name, callback) {
 	console.log('--- enter pool.addOne ---');
 	var ModelTable = require('../../models/' + table_name + '/' + table_name + '.js');
 	var model_table = new ModelTable();
+	var table_cols = model_table.table_cols;
     var sql = 'insert into ' + table_name + ' set ?';
     var post = {}; 
-	var table_cols = model_table.table_cols;
 
     table_cols.forEach(function(v,i,arr){
         //console.log('-- foreach ', i ,' -- ');
@@ -223,9 +223,87 @@ pool.addOne = function(req, table_name, callback) {
             }   
         }   
     }); 
+    console.log(sql);
     console.log(post);
 	pool.query(sql, post, callback);
     console.log("sql add first here"); 
+};
+
+pool.updateOne = function(req, table_name, callback) {
+	console.log('--- enter pool.updateOne ---');
+	var ModelTable = require('../../models/' + table_name + '/' + table_name + '.js');
+	var model_table = new ModelTable();
+	var table_cols = model_table.table_cols;
+    var sql = 'UPDATE ' + table_name + ' SET ' ;
+    var sql_params = ['',0];
+
+    var col_len = table_cols.length;
+
+    var update_i = 0;
+    console.log(req.query)
+    table_cols.forEach(function(v,i,arr){
+        //console.log('-- foreach ', i ,' -- ');
+        if(i != 0){
+            if(req.query && req.query[table_cols[i]]){
+                if(update_i == 0){
+                    sql = sql + table_cols[i] + ' = ? ';
+                }else{
+                    sql = sql + ', ' + table_cols[i] + ' = ? ';
+                }
+                //console.log('>>> hit ', req.query[table_cols[i]]);
+                sql_params[update_i] = req.query[table_cols[i]];
+                update_i ++;
+                //sql = sql + '"' + req.query.name + '"';
+            }else if(req.params && req.params[table_cols[i]]){
+                if(update_i == 0){
+                    sql = sql + table_cols[i] + ' = ? ';
+                }else{
+                    sql = sql + ', ' + table_cols[i] + ' = ? ';
+                }
+                sql_params[update_i] = req.params[table_cols[i]];
+                update_i ++;
+            }else if(req.body && req.body[table_cols[i]]){
+                if(update_i == 0){
+                    sql = sql + table_cols[i] + ' = ? ';
+                }else{
+                    sql = sql + ', ' + table_cols[i] + ' = ? ';
+                }
+                sql_params[update_i] = req.body[table_cols[i]];
+                update_i ++;
+            }
+        }
+    });
+    sql += ' WHERE ' + table_cols[0] + ' = ?';
+    console.log(sql);
+    if(req.query && req.query[table_cols[0]]){
+        sql_params[update_i] = req.query[table_cols[0]];
+    }else if(req.params && req.params[table_cols[0]]){
+        sql_params[update_i] = req.params[table_cols[0]];
+    }else if(req.body && req.body[table_cols[0]]){
+        sql_params[update_i] = req.body[table_cols[0]];
+    }
+    //console.log(sql_params);
+	pool.query(sql, sql_params, callback);
+    console.log("sql update first here");
+};
+
+pool.deleteOne = function(req, table_name, callback) {
+	console.log('--- enter pool.deleteOne ---');
+	var ModelTable = require('../../models/' + table_name + '/' + table_name + '.js');
+	var model_table = new ModelTable();
+	var table_cols = model_table.table_cols;
+    var sql = 'delete from ' + table_name + ' WHERE ' + table_cols[0] + ' = ?';
+    var sql_params = [0];
+
+    if(req.params && req.params[table_cols[0]]){
+        sql_params[0] = req.params[table_cols[0]];
+    }else if(req.query && req.query[table_cols[0]]){
+        sql_params[0] = req.query[table_cols[0]];
+    }else if(req.body && req.body[table_cols[0]]){
+        sql_params[0] = req.body[table_cols[0]];
+    }   
+	pool.query(sql, sql_params, callback);
+    console.log("sql delete first here"); 
 };
 
 module.exports = pool;

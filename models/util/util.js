@@ -59,7 +59,7 @@ function check_table_cross(){
 	});
 	console.log(__filename);
 	console.log("check_table_cross:  this.table_cross_name arrays checked !!! ");
-	console.log(this.table_cross_column_as);
+	//console.log(this.table_cross_column_as);
 	//console.log(this.table_cross_column_as[0][0][1][0]);
 	this.table_cross_checked = true;
 	return true;
