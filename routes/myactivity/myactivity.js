@@ -69,8 +69,8 @@ router.get('/getbyid', function(req, res, next) {
 	console.log("get one by id first here"); 
 });
 
-/* add one
- *
+/*
+ * add one
  */
 router.get('/add', function(req, res, next) {
 	var retjson = {"code":0,"msg":"ok"};
@@ -88,6 +88,9 @@ router.get('/add', function(req, res, next) {
 	console.log("sql add first here"); 
 });
 
+/* 
+ *	update one
+ */
 router.get('/update', function(req, res, next) {
 	var retjson = {"code":0,"msg":"ok"};
 	var cbfunc = function(error, results, fields) {
@@ -104,6 +107,9 @@ router.get('/update', function(req, res, next) {
 	console.log("sql update first here"); 
 });
 
+/* 
+ *	delete one
+ */
 router.get('/delete', function(req, res, next) {
 	var retjson = {"code":0,"msg":"ok"};
 	var cbfunc = function(error, results, fields) {
