@@ -7,8 +7,14 @@
 var express = require('express');
 var router = express.Router();
 var conn = require('../common/database');
+var Myactivity = require('../../models/myactivity/myactivity.js');
 
-const table_name = 'pkproject';
+var myactivity = new Myactivity();
+
+const table_name = myactivity.table_name; //'pkproject';
+const table_cols = myactivity.table_cols; //'pkproject';
+
+//console.log(table_name);
 
 /* GET all listing. */
 router.get('/', function(req, res, next) {
@@ -67,33 +73,18 @@ router.get('/getbyid', function(req, res, next) {
  *
  */
 router.get('/add', function(req, res, next) {
-	var sql = 'insert into ' + table_name + ' set ?';
-	var post = {};
+	var retjson = {"code":0,"msg":"ok"};
 
-	table_cols.forEach(function(v,i,arr){
-		//console.log('-- foreach ', i ,' -- ');
-		if(i != 0){
-			if(req.query && req.query[table_cols[i]]){
-				post[table_cols[i]] = req.query[table_cols[i]];
-				//sql = sql + '"' + req.query.name + '"';
-			}else if(req.params && req.params[table_cols[i]]){
-				post[table_cols[i]] = req.params[table_cols[i]];
-			}else if(req.body && req.body[table_cols[i]]){
-				post[table_cols[i]] = req.body[table_cols[i]];
-			}
-		}
-	});
-	console.log(post);
-	conn.query(sql, post,function(error, results, fields) {
+	var cbfunc = function(error, results, fields) {
 		if(error){
 			console.log(error);
 		}
-		var retjson = {"code":0,"msg":"ok"};
-		retjson.pId = results?results.insertId:'-1';
+		retjson.maId = results?results.insertId:'-1';
 		res.send(JSON.stringify(retjson));
         //res.end('is over');
 		console.log('sql add over ');
-	});
+	};
+	conn.addOne(req, table_name, cbfunc);
 	console.log("sql add first here"); 
 });
 

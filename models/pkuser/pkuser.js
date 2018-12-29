@@ -24,7 +24,7 @@ function pkuser(){
 	oPkuser.table_cross_checked = false;
 	
 	oPkuser.table_name = 'pkuser';
-	oPkuser.table_cols = ['userId','nickName','trueName','phone','gender','language','city','province','country','avatarUrl','token'];
+	oPkuser.table_cols = ['userId','nickName','trueName','phone','gender','language','city','province','country','avatarUrl','js_code','openid','token','session_key','sessionid'];
 
 	oPkuser.table_cross_fkey = [];	
 	oPkuser.table_cross_name = [];	

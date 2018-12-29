@@ -145,6 +145,28 @@ pool.queryOneById = function(req, table_name, callback){
 	console.log("first here"); 
 };
 
+pool.queryOneByCol = function(req, table_name, col_name, callback){
+	console.log('--- enter pool.queryOneById ---');
+	var ModelTable = require('../../models/' + table_name + '/' + table_name + '.js');
+	var model_table = new ModelTable();
+	var cond = table_name + '.' + col_name + ' = ?';
+	var sql = __prepare_select_sql(model_table, table_name, cond);
+	var sql_params = [0];
+	
+	//	prepare param values
+	if(req.params && req.params[col_name]){
+		sql_params[0] = req.params[col_name];
+	}else if(req.query && req.query[col_name]){
+		sql_params[0] = req.query[col_name];
+	}else if(req.body && req.body[col_name]){
+		sql_params[0] = req.body[col_name];
+	}
+
+	//	execute sql
+	pool.query(sql,sql_params,callback);
+	console.log("first here"); 
+};
+
 pool.queryList = function(req, table_name, callback){
 	console.log('--- enter pool.queryList ---');
 	var ModelTable = require('../../models/' + table_name + '/' + table_name + '.js');
@@ -178,6 +200,32 @@ pool.queryList = function(req, table_name, callback){
 	//	execute sql
 	pool.query(sql,sql_params,callback);
 	console.log("first here"); 
+};
+
+pool.addOne = function(req, table_name, callback) {
+	console.log('--- enter pool.addOne ---');
+	var ModelTable = require('../../models/' + table_name + '/' + table_name + '.js');
+	var model_table = new ModelTable();
+    var sql = 'insert into ' + table_name + ' set ?';
+    var post = {}; 
+	var table_cols = model_table.table_cols;
+
+    table_cols.forEach(function(v,i,arr){
+        //console.log('-- foreach ', i ,' -- ');
+        if(i != 0){ 
+            if(req.query && req.query[table_cols[i]]){
+                post[table_cols[i]] = req.query[table_cols[i]];
+                //sql = sql + '"' + req.query.name + '"';
+            }else if(req.params && req.params[table_cols[i]]){
+                post[table_cols[i]] = req.params[table_cols[i]];
+            }else if(req.body && req.body[table_cols[i]]){
+                post[table_cols[i]] = req.body[table_cols[i]];
+            }   
+        }   
+    }); 
+    console.log(post);
+	pool.query(sql, post, callback);
+    console.log("sql add first here"); 
 };
 
 module.exports = pool;

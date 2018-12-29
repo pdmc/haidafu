@@ -95,6 +95,7 @@ router.get('/add', function(req, res, next) {
 			console.log(error);
 		}
 		var retjson = {"code":0,"msg":"ok"};
+		retjson.hlId = results?results.insertId:'-1';
 		res.send(JSON.stringify(retjson));
         //res.end('is over');
 		console.log('sql add over ');
