@@ -101,38 +101,43 @@ router.post('/login', function(req, res, next) {
 	console.log(post);
 
 	if(post['openid'] && post['openid'].length > 5){
-			// find user existence
-    		var cbfunc = function(error, results, fields) {  // L3: find user
-    		    if(error){
-    		        console.log(error);
-    		    }   
-    		    if(results.length > 0){ 	// find user 
-					console.log(results);
-    		        retjson.userId = results[0].userId;
-    		        retjson.openid = results[0].openid;
-    	    		res.send(JSON.stringify(retjson));
-    		    } else { 	// no user, register
-					conn.query(sql_insert, post, function(error, results, fields) {  // L4: insert user
+		console.log('users::login  1 with openid');
+		// find user existence
+    	var cbfunc = function(error, results, fields) {  // L3: find user
+    		if(error){
+    		    console.log(error);
+    		}   
+    		if(results.length > 0){ 	// find user 
+				console.log('users::login  11 find user');
+				console.log(results);
+    		    retjson.userId = results[0].userId;
+    		    retjson.openid = results[0].openid;
+    		    //retjson.trueName = results[0].trueName;
+    		    retjson.mobile = results[0].phone;
+    	    	res.send(JSON.stringify(retjson));
+    		 } else { 	// no user, register
+				console.log('users::login  12 no user, to register');
+				conn.query(sql_insert, post, function(error, results, fields) {  // L4: insert user
 						if(error){
 							console.log(error);
 						}
 						console.log(results);
 						retjson.userId = results?results.insertId:'-1';
-						retjson.openid = results?results.openid:'-1';
+						//retjson.openid = results?results.openid:'-1';  // no register, no openid
 						res.send(JSON.stringify(retjson));
     				    //res.end('is over');
 						console.log('user register over 1');
 						return;
-					});
-					console.log("sql add first here 1"); 
-				}
-    		    //res.send(JSON.stringify(retjson));
-    		    console.log('find user by openid json sent over. 1');
-    		};  
-    		//conn.queryOneById(req, table_name, cbfunc);
-    		conn.queryOneByCol(req, table_name, 'openid', cbfunc);
-
+				});
+				console.log("sql add first here 1"); 
+			}
+    		//res.send(JSON.stringify(retjson));
+    		console.log('find user by openid json sent over. 1');
+    	};  
+    	//conn.queryOneById(req, table_name, cbfunc);
+    	conn.queryOneByCol(req, table_name, 'openid', cbfunc);
 	} else {
+		console.log('users::login 2 no openid, login to wx');
 		// code2session
 		var appID = 'wx7703e7582335f2be';
 		var secret = '98cad5a162c99f33061c89c00bd95a52';
@@ -164,11 +169,14 @@ router.post('/login', function(req, res, next) {
 	    		        console.log(error);
 	    		    }   
 	    		    if(results.length > 0){ 	// find user 
+						console.log('users::login  21  find user');
 						console.log(results);
 	    		        retjson.userId = results[0].userId;
 	    		        retjson.openid = results[0].openid;
+	    		        retjson.mobile = results[0].phone;
 	    	    		res.send(JSON.stringify(retjson));
 	    		    } else { 	// no user, register
+						console.log('users::login  22 no user, to register');
 						conn.query(sql_insert, post, function(error, results, fields) {  // L4: insert user
 							if(error){
 								console.log(error);

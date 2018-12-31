@@ -86,6 +86,16 @@ router.get('/add', function(req, res, next) {
 	};
 	conn.addOne(req, table_name, cbfunc);
 	console.log("sql add first here"); 
+	
+	cbfunc = function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
+		console.log(results);
+		console.log('myactivity user update over ');
+	};
+	conn.updateOne(req, 'pkuser', cbfunc);
+	console.log("sql update first here"); 
 });
 
 /* 

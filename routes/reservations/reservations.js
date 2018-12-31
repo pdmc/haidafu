@@ -42,7 +42,7 @@ router.get('/getbycond', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
-		if(results.length > 0){
+		if(results && results.length > 0){
 			retjson.data = results;
 		}
 		res.send(JSON.stringify(retjson));
@@ -74,18 +74,37 @@ router.get('/getbyid', function(req, res, next) {
  */
 router.get('/add', function(req, res, next) {
 	var retjson = {"code":0,"msg":"ok"};
+	var hbid = -1;
 
 	var cbfunc = function(error, results, fields) {
 		if(error){
 			console.log(error);
 		}
+		hbid = results?results.insertId:'-1';
+		console.log('reservation: hongbao add over, id: ' + hbid);
+	};
+	conn.addOne(req, "hongbao", cbfunc);
+	console.log("sql add first here"); 
+	
+	cbfunc = function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
+		console.log('reservation: user update over ');
+	};
+	conn.updateOne(req, 'pkuser', cbfunc);
+
+	cbfunc = function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
 		retjson.rId = results?results.insertId:'-1';
+		retjson.hbId = hbid;	// 此处应该等待 hongbao 回调函数返回
 		res.send(JSON.stringify(retjson));
         //res.end('is over');
-		console.log('sql add over ');
+		console.log('reservation add over ');
 	};
 	conn.addOne(req, table_name, cbfunc);
-	console.log("sql add first here"); 
 });
 
 /* 

@@ -6,257 +6,198 @@
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[]
 /var/www/haidafu/models/pkactivity/pkactivity.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[]
 /var/www/haidafu/models/myactivity/myactivity.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
 /var/www/haidafu/models/favorite/favorite.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[]
 /var/www/haidafu/models/reservation/reservation.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkproject__pId', 'pkproject__pName' ] ]
 /var/www/haidafu/models/hongbao/hongbao.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[]
 /var/www/haidafu/models/housetype/housetype.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[]
 /var/www/haidafu/models/fitmenttype/fitmenttype.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[]
 /var/www/haidafu/models/prighttype/prighttype.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[]
 /var/www/haidafu/models/area/area.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[]
---- enter pool.addOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-{ userId: '4', actId: '4' }
-sql add first here
-sql add first here
-sql add over 
---- enter pool.addOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-{ userId: '4', actId: '4' }
-sql add first here
-sql add first here
-sql add over 
---- enter pool.addOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+condition listing json sent over. 
+all listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-{ userId: '4', actId: '4' }
-sql add first here
-sql add first here
-sql add over 
---- enter pool.updateOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+all listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-{ maId: '2', actId: '2', userId: '2' }
-UPDATE myactivity SET userId = ? , actId = ?  WHERE maId = ?
-[ '2', '2', '2' ]
-sql update first here
-sql update first here
-sql update over: 
---- enter pool.updateOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-{ maId: '2', status: '1' }
-UPDATE myactivity SET status = ?  WHERE maId = ?
-[ '1', '2' ]
-sql update first here
-sql update first here
-sql update over: 
---- enter pool.deleteOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-sql delete first here
-sql delete first here
-sql delete over 
---- enter pool.updateOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
+condition listing json sent over. 
+----------- user login -----------
+{ nickName: '张辉',
+  gender: 1,
+  language: 'zh_CN',
+  country: 'Andorra',
+  avatarUrl:
+   'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKNiaRPqaY1h6zVw8vChB0rGfOiaDgBH6kPTekuk0hbe27l8KibaQ08Kyrf3CCrshShO4WZWibCaRnXjw/132',
+  js_code: '061BXKy32AMYsO0kGlz32ckvy32BXKyR' }
+users::login 2 no openid, login to wx
+https://api.weixin.qq.com/sns/jscode2session?appid=wx7703e7582335f2be&secret=98cad5a162c99f33061c89c00bd95a52&js_code=061BXKy32AMYsO0kGlz32ckvy32BXKyR&grant_type=authorization_code
+{"session_key":"r2z6Vo2FLTZsZhnBpd82cQ==","openid":"oQEEn4_CCUgqozNleCrtSN2otdgQ"}
+--- enter pool.queryOneById ---
+/var/www/haidafu/models/pkuser/pkuser.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-{ maId: '2', actId: '2', userId: '2' }
-UPDATE myactivity SET userId = ? , actId = ?  WHERE maId = ?
-[ '2', '2', '2' ]
-sql update first here
-sql update first here
-sql update over: 
---- enter pool.updateOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkuser.userId, pkuser.nickName, pkuser.trueName, pkuser.phone, pkuser.gender, pkuser.language, pkuser.city, pkuser.province, pkuser.country, pkuser.avatarUrl, pkuser.js_code, pkuser.openid, pkuser.token, pkuser.session_key, pkuser.sessionid FROM pkuser WHERE pkuser.openid = ?
+first here
+jscode2session:   eeeeennnnnddddd
+users::login  21  find user
+[ RowDataPacket {
+    userId: 2,
+    nickName: '张辉',
+    trueName: 'aa',
+    phone: '12341234443',
+    gender: 1,
+    language: 'zh_CN',
+    city: null,
+    province: null,
+    country: 'Andorra',
+    avatarUrl:
+     'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKNiaRPqaY1h6zVw8vChB0rGfOiaDgBH6kPTekuk0hbe27l8KibaQ08Kyrf3CCrshShO4WZWibCaRnXjw/132',
+    js_code: '011YhxaG06Cnod2pBBaG0j7UaG0YhxaJ',
+    openid: 'oQEEn4_CCUgqozNleCrtSN2otdgQ',
+    token: null,
+    session_key: 'dQ34b137Loyf+x06HJFzyA==',
+    sessionid: null } ]
+find user by openid json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-{ maId: '2', status: '1' }
-UPDATE myactivity SET status = ?  WHERE maId = ?
-[ '1', '2' ]
-sql update first here
-sql update first here
-sql update over: 
---- enter pool.deleteOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-sql delete first here
-sql delete first here
-sql delete over 
---- enter pool.deleteOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+condition listing json sent over. 
+all listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-sql delete first here
-sql delete first here
-sql delete over 
---- enter pool.updateOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-{ maId: '2', actId: '2', userId: '2' }
-UPDATE myactivity SET userId = ? , actId = ?  WHERE maId = ?
-[ '2', '2', '2' ]
-sql update first here
-sql update first here
-sql update over: 
---- enter pool.updateOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-{ maId: '2', status: '1' }
-UPDATE myactivity SET status = ?  WHERE maId = ?
-[ '1', '2' ]
-sql update first here
-sql update first here
-sql update over: 
---- enter pool.deleteOne ---
-/var/www/haidafu/models/myactivity/myactivity.js
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+all listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
-[ [ 'pkactivity__actId',
-    'pkactivity__subject',
-    'pkactivity__address',
-    'pkactivity__startTime',
-    'pkactivity__endTime',
-    'pkactivity__imgurl' ] ]
-sql delete first here
-sql delete first here
-sql delete over 
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, houselayout.pId AS houselayout__pId, houselayout.livingroomNum AS houselayout__livingroomNum, houselayout.bedroomNum AS houselayout__bedroomNum, houselayout.bathroomNum AS houselayout__bathroomNum, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, houselayout.hlSquare AS houselayout__hlSquare, houselayout.picture1 AS houselayout__picture1, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, houselayout, housetype, fitmenttype, prighttype WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.pId = houselayout.pId AND housetype.typeId = houselayout.typeId AND fitmenttype.ftId = houselayout.fitmentId AND pkproject.prightId = prighttype.prId AND  1=1 
+first here
+condition listing first here
+condition listing json sent over. 

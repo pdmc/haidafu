@@ -41,7 +41,7 @@ function __prepare_select_sql(model_table, table_name, condition){
 	
 	// 2. query table columns
 	model_table.table_cross_name.forEach(function(v,i,arr){	 // 1 查询表循环
-		if(model_table.table_cross_fkey[i].length > 1){
+		if(Array.isArray(model_table.table_cross_fkey[i]) && model_table.table_cross_fkey[i].length > 1){
 			model_table.table_cross_fkey[i].forEach(function(y,l,arr2){	 // 2 多外键对应一个查询表循环
 				model_table.table_cross_cols[i].forEach(function(w,j,array){		// 3 查询表 多列循环
 					if(model_table.table_cross_cols[i][j].fkey){
@@ -71,7 +71,7 @@ function __prepare_select_sql(model_table, table_name, condition){
 	// 3. query table names
 	sql = sql + ' FROM ' + model_table.table_name;
 	model_table.table_cross_name.forEach(function(v,i,arr){
-		if(model_table.table_cross_fkey[i].length > 1){
+		if(Array.isArray(model_table.table_cross_fkey[i]) && model_table.table_cross_fkey[i].length > 1){
 			model_table.table_cross_fkey[i].forEach(function(y,l,arr2){
 				sql = sql + ', (select * from ' + model_table.table_cross_name[i] + ') as ' + model_table.table_cross_name[i]  + '__' + model_table.table_cross_fkey[i][l];
 				model_table.table_cross_cols[i].forEach(function(w,j,array){
@@ -94,7 +94,7 @@ function __prepare_select_sql(model_table, table_name, condition){
 	// 4. query correlative query
 	sql = sql + ' WHERE ';
 	model_table.table_cross_name.forEach(function(v,i,arr){
-		if(model_table.table_cross_fkey[i].length > 1){
+		if(Array.isArray(model_table.table_cross_fkey[i]) && model_table.table_cross_fkey[i].length > 1){
 			model_table.table_cross_fkey[i].forEach(function(y,l,arr2){
 				sql = sql + model_table.table_name + '.' + model_table.table_cross_fkey[i][l] + ' = ' + model_table.table_cross_name[i] + '__' + model_table.table_cross_fkey[i][l] + '.' + model_table.table_cross_cols[i][0] + ' AND ';
 				model_table.table_cross_cols[i].forEach(function(w,j,array){
@@ -180,18 +180,19 @@ pool.queryList = function(req, table_name, callback){
 	model_table.table_cols.forEach(function(v,i,arr){
 		if(req.params && req.params[model_table.table_cols[i]]){
 			sql_params[index] = req.params[model_table.table_cols[i]];
-			cond = cond + model_table.table_cols[i] + ' = ? AND ';
+			cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
 			index ++;
 		}else if(req.query && req.query[model_table.table_cols[i]]){
 			sql_params[index] = req.query[model_table.table_cols[i]];
-			cond = cond + model_table.table_cols[i] + ' = ? AND ';
+			cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
 			index ++;
 		}else if(req.body && req.body[model_table.table_cols[i]]){
 			sql_params[index] = req.body[model_table.table_cols[i]];
-			cond = cond + model_table.table_cols[i] + ' = ? AND ';
+			cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
 			index ++;
 		}
 	});
+	//console.log(sql_params);
 
 	cond += ' 1=1 ';	// compatible with sql end ' AND '
 	
