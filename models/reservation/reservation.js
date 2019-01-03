@@ -24,11 +24,15 @@ function reservation(){
 	oReservation.table_cross_checked = false;
 	
 	oReservation.table_name = 'reservation';
-	oReservation.table_cols = ['rId','userId','pId','status','applyTime'];
+	oReservation.table_cols = ['rId','userId','pId','status','applyTime','trueName','phone'];
 
 	oReservation.table_cross_fkey = ['pId'];	
 	oReservation.table_cross_name = ['pkproject'];	
-	oReservation.table_cross_cols = [['pId','pName']];	
+	oReservation.table_cross_cols = [['pId','pName','minSquare','maxSquare','minPrice','maxPrice',
+									  {fkey:'countryId', table: 'area', cols: ['addrId', 'name']},
+									  {fkey:'cityId', table: 'area', cols: ['addrId', 'name']},
+									  'thumbnail']
+	];	
 	oReservation.table_cross_column_as = []; 	
 	
 	oReservation.check_table_cross = check_table_cross;

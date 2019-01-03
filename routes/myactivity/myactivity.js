@@ -112,7 +112,7 @@ router.get('/addifnotexist', function(req, res, next) {
 				if(error){
 					console.log(error);
 				}
-				retjson.fId = results?results.insertId:'-1';
+				retjson.maId = results?results.insertId:'-1';
 				res.send(JSON.stringify(retjson));
     		    //res.end('is over');
 				console.log(table_name + ': sql add over');
@@ -121,7 +121,7 @@ router.get('/addifnotexist', function(req, res, next) {
 			console.log(table_name + ': sql add first here'); 
 
 		}else{
-			retjson.fId = results[0].fId;
+			retjson.maId = results[0].maId;
 			res.send(JSON.stringify(retjson));
 			console.log(table_name + ': sql query over');
 		}

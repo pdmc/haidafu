@@ -111,7 +111,7 @@ router.get('/addifnotexist', function(req, res, next) {
 			console.log("sql add first here"); 
 
 		}else{
-			retjson.fId = results[0].fId;
+			retjson.hbId = results[0].hbId;
 			res.send(JSON.stringify(retjson));
 			console.log('sql query over');
 		}

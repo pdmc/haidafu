@@ -58,7 +58,7 @@ function __prepare_select_sql(model_table, table_name, condition){
 			model_table.table_cross_cols[i].forEach(function(w,j,array){
 				if(model_table.table_cross_cols[i][j].fkey){
 					model_table.table_cross_cols[i][j].cols.forEach(function(x,k,array2){
-						sql = sql + ', ' + model_table.table_cross_cols[i][j].table + '.' + model_table.table_cross_cols[i][j].cols[k] + ' AS ' + model_table.table_cross_column_as[i][j][k];
+						sql = sql + ', ' + model_table.table_cross_cols[i][j].fkey + '__' + model_table.table_cross_cols[i][j].table + '.' + model_table.table_cross_cols[i][j].cols[k] + ' AS ' + model_table.table_cross_column_as[i][j][k];
 					});
 				}else{
 					sql = sql + ', ' + model_table.table_cross_name[i] + '.' + model_table.table_cross_cols[i][j] + ' AS ' + model_table.table_cross_column_as[i][j];
@@ -84,7 +84,7 @@ function __prepare_select_sql(model_table, table_name, condition){
 			sql = sql + ', ' + model_table.table_cross_name[i];
 			model_table.table_cross_cols[i].forEach(function(w,j,array){
 				if(model_table.table_cross_cols[i][j].fkey){
-					sql = sql + ', ' + model_table.table_cross_cols[i][j].table;
+					sql = sql + ', (select * from ' + model_table.table_cross_cols[i][j].table + ') as ' +  model_table.table_cross_cols[i][j].fkey + '__' + model_table.table_cross_cols[i][j].table;
 				}
 			});
 		}
@@ -107,7 +107,7 @@ function __prepare_select_sql(model_table, table_name, condition){
 			sql = sql + model_table.table_name + '.' + model_table.table_cross_fkey[i] + ' = ' + model_table.table_cross_name[i] + '.' + model_table.table_cross_cols[i][0] + ' AND ';
 			model_table.table_cross_cols[i].forEach(function(w,j,array){
 				if(model_table.table_cross_cols[i][j].fkey){
-					sql = sql + model_table.table_cross_cols[i][j].table + '.' + model_table.table_cross_cols[i][j].cols[0] + ' = ' + model_table.table_cross_name[i] + '.' + model_table.table_cross_cols[i][j].fkey + ' AND ';
+					sql = sql + model_table.table_cross_cols[i][j].fkey + '__' + model_table.table_cross_cols[i][j].table + '.' + model_table.table_cross_cols[i][j].cols[0] + ' = ' + model_table.table_cross_name[i] + '.' + model_table.table_cross_cols[i][j].fkey + ' AND ';
 				}
 			});
 		}

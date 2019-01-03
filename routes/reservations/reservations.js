@@ -150,7 +150,7 @@ router.get('/addifnotexist', function(req, res, next) {
 			console.log(table_name + ': sql add first here'); 
 
 		}else{
-			retjson.fId = results[0].fId;
+			retjson.rId = results[0].rId;
 			res.send(JSON.stringify(retjson));
 			console.log(table_name + ': sql query over');
 		}
@@ -176,15 +176,15 @@ router.get('/addwithhbifnotexist', function(req, res, next) {
 					console.log(error);
 				}
 				retjson.hbId = results?results.insertId:'-1';
-				res.send(JSON.stringify(retjson));
+				//res.send(JSON.stringify(retjson));
     		    //res.end('is over');
 				console.log('hongbao: sql add over');
 			};
-			conn.addOne(req, table_name, cbfunc1);
+			conn.addOne(req, "hongbao", cbfunc1);
 			console.log("hongbao: sql add first here"); 
 
 		}else{
-			retjson.fId = results[0].fId;
+			retjson.hbId = results[0].hbId;
 			res.send(JSON.stringify(retjson));
 			console.log('hongbao: sql query over');
 		}
@@ -220,7 +220,7 @@ router.get('/addwithhbifnotexist', function(req, res, next) {
 			console.log(table_name + ': sql add first here'); 
 
 		}else{
-			retjson.fId = results[0].fId;
+			retjson.rId = results[0].rId;
 			res.send(JSON.stringify(retjson));
 			console.log(table_name + ': sql query over');
 		}

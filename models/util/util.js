@@ -46,7 +46,7 @@ function check_table_cross(){
 				if(table_cross_cols[i][j].fkey){
 					table_cross_column_as[i][j] = []
 					table_cross_cols[i][j].cols.forEach(function(x,k,array2){
-						table_cross_column_as[i][j][k] = table_cross_cols[i][j].table + '__' + table_cross_cols[i][j].cols[k];
+						table_cross_column_as[i][j][k] = table_cross_cols[i][j].fkey + '__' + table_cross_cols[i][j].table + '__' + table_cross_cols[i][j].cols[k];
 						//console.log(table_cross_column_as);
 					});
 				}else{
