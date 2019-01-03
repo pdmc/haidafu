@@ -76,6 +76,26 @@ router.get('/add', function(req, res, next) {
 	var retjson = {"code":0,"msg":"ok"};
 	var hbid = -1;
 
+	cbfunc = function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
+		retjson.rId = results?results.insertId:'-1';
+		retjson.hbId = hbid;	// 此处应该等待 hongbao 回调函数返回
+		res.send(JSON.stringify(retjson));
+        //res.end('is over');
+		console.log(table_name + ': reservation add over ');
+	};
+	conn.addOne(req, table_name, cbfunc);
+});
+
+/*
+ * add one
+ */
+router.get('/addwithhb', function(req, res, next) {
+	var retjson = {"code":0,"msg":"ok"};
+	var hbid = -1;
+
 	var cbfunc = function(error, results, fields) {
 		if(error){
 			console.log(error);
@@ -84,13 +104,13 @@ router.get('/add', function(req, res, next) {
 		console.log('reservation: hongbao add over, id: ' + hbid);
 	};
 	conn.addOne(req, "hongbao", cbfunc);
-	console.log("sql add first here"); 
+	console.log(table_name + ': hongbao add first here'); 
 	
 	cbfunc = function(error, results, fields) {
 		if(error){
 			console.log(error);
 		}
-		console.log('reservation: user update over ');
+		console.log(table_name + ': user update over ');
 	};
 	conn.updateOne(req, 'pkuser', cbfunc);
 
@@ -102,9 +122,113 @@ router.get('/add', function(req, res, next) {
 		retjson.hbId = hbid;	// 此处应该等待 hongbao 回调函数返回
 		res.send(JSON.stringify(retjson));
         //res.end('is over');
-		console.log('reservation add over ');
+		console.log(table_name + ': reservation add over ');
 	};
 	conn.addOne(req, table_name, cbfunc);
+});
+
+/*
+ * add one, if condition record not exist
+ */
+router.get('/addifnotexist', function(req, res, next) {
+	var retjson = {"code":0,"msg":"ok"};
+	var cbfunc = function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
+		if(results.length == 0){
+			var cbfunc1 = function(error, results, fields) {
+				if(error){
+					console.log(error);
+				}
+				retjson.rId = results?results.insertId:'-1';
+				res.send(JSON.stringify(retjson));
+    		    //res.end('is over');
+				console.log(table_name + ': sql add over');
+			};
+			conn.addOne(req, table_name, cbfunc1);
+			console.log(table_name + ': sql add first here'); 
+
+		}else{
+			retjson.fId = results[0].fId;
+			res.send(JSON.stringify(retjson));
+			console.log(table_name + ': sql query over');
+		}
+		//res.send(JSON.stringify(retjson));
+		console.log(table_name + ': condition listing json sent over. ');
+	};
+	conn.queryList(req, table_name, cbfunc);
+	console.log(table_name + ': condition listing first here'); 
+});
+
+/*
+ * add one, if condition record not exist
+ */
+router.get('/addwithhbifnotexist', function(req, res, next) {
+	var retjson = {"code":0,"msg":"ok"};
+	var cbfunc = function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
+		if(results.length == 0){
+			var cbfunc1 = function(error, results, fields) {
+				if(error){
+					console.log(error);
+				}
+				retjson.hbId = results?results.insertId:'-1';
+				res.send(JSON.stringify(retjson));
+    		    //res.end('is over');
+				console.log('hongbao: sql add over');
+			};
+			conn.addOne(req, table_name, cbfunc1);
+			console.log("hongbao: sql add first here"); 
+
+		}else{
+			retjson.fId = results[0].fId;
+			res.send(JSON.stringify(retjson));
+			console.log('hongbao: sql query over');
+		}
+		//res.send(JSON.stringify(retjson));
+		console.log('hongbao: condition listing json sent over. ');
+	};
+	conn.queryList(req, "hongbao", cbfunc);
+	console.log("hongbao: condition listing first here"); 
+	
+	cbfunc = function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
+		console.log('reservation: user update over ');
+	};
+	conn.updateOne(req, 'pkuser', cbfunc);
+
+	var cbfunc = function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
+		if(results.length == 0){
+			var cbfunc1 = function(error, results, fields) {
+				if(error){
+					console.log(error);
+				}
+				retjson.rId = results?results.insertId:'-1';
+				res.send(JSON.stringify(retjson));
+    		    //res.end('is over');
+				console.log(table_name + ': sql add over');
+			};
+			conn.addOne(req, table_name, cbfunc1);
+			console.log(table_name + ': sql add first here'); 
+
+		}else{
+			retjson.fId = results[0].fId;
+			res.send(JSON.stringify(retjson));
+			console.log(table_name + ': sql query over');
+		}
+		//res.send(JSON.stringify(retjson));
+		console.log(table_name + ': condition listing json sent over. ');
+	};
+	conn.queryList(req, table_name, cbfunc);
+	console.log(table_name + ': condition listing first here'); 	
 });
 
 /* 
@@ -117,13 +241,13 @@ router.get('/update', function(req, res, next) {
 			console.log(error);
 		}
 		res.send(JSON.stringify(retjson));
-		console.log('sql update over: ');
+		console.log(table_name + ': sql update over: ');
         //res.end('is over');
 		//console.log('connected as id ' + conn.threadId);
 		//conn.releaseConnection();
 	};
 	conn.updateOne(req, table_name, cbfunc);
-	console.log("sql update first here"); 
+	console.log(table_name + ': sql update first here'); 
 });
 
 /* 
@@ -138,10 +262,10 @@ router.get('/delete', function(req, res, next) {
 		//res.json(JSON.stringify(retjson));
         //res.end('is over');
 		res.send(JSON.stringify(retjson));
-		console.log('sql delete over ');
+		console.log(table_name + ': sql delete over ');
 	};
 	conn.deleteOne(req, table_name, cbfunc);
-	console.log("sql delete first here"); 
+	console.log(table_name + ': sql delete first here'); 
 });
 
 module.exports = router;

@@ -105,21 +105,21 @@ router.get('/addifnotexist', function(req, res, next) {
 				retjson.fId = results?results.insertId:'-1';
 				res.send(JSON.stringify(retjson));
     		    //res.end('is over');
-				console.log('sql add over');
+				console.log(table_name + ': sql add over');
 			};
 			conn.addOne(req, table_name, cbfunc1);
-			console.log("sql add first here"); 
+			console.log(table_name + ': sql add first here'); 
 
 		}else{
 			retjson.fId = results[0].fId;
 			res.send(JSON.stringify(retjson));
-			console.log('sql query over');
+			console.log(table_name + ': sql query over');
 		}
 		//res.send(JSON.stringify(retjson));
-		console.log('condition listing json sent over. ');
+		console.log(table_name + ': condition listing json sent over. ');
 	};
 	conn.queryList(req, table_name, cbfunc);
-	console.log("condition listing first here"); 
+	console.log(table_name + ': condition listing first here'); 
 	
 });
 
