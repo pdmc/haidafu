@@ -25,6 +25,7 @@ function pkactivity(){
 	
 	oActivity.table_name = 'pkactivity';
 	oActivity.table_cols = ['actId','subject','address','startTime','endTime','imgurl'];
+	oActivity.condition_range = [];
 
 	oActivity.table_cross_fkey = [];	
 	oActivity.table_cross_name = [];	

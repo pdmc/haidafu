@@ -176,19 +176,42 @@ pool.queryList = function(req, table_name, callback){
 	var sql_params = [0];
 	var index = 0;
 
+	//console.log(req);
 	//	prepare param values
 	model_table.table_cols.forEach(function(v,i,arr){
+		var ci = model_table.condition_range.indexOf(model_table.table_cols[i]);
 		if(req.params && req.params[model_table.table_cols[i]]){
 			sql_params[index] = req.params[model_table.table_cols[i]];
-			cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
+			if(ci >= 0 && ci % 2 == 0) {	// min
+				//cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' >= ? AND ';
+				cond = cond + model_table.table_name + '.' + model_table.condition_range[ci+1] + ' >= ? AND ';
+			} else if(ci >= 0 && ci % 2 == 1) {	// max
+				cond = cond + model_table.table_name + '.' + model_table.condition_range[ci-1] + ' <= ? AND ';
+			} else {
+				cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
+			}
 			index ++;
 		}else if(req.query && req.query[model_table.table_cols[i]]){
 			sql_params[index] = req.query[model_table.table_cols[i]];
-			cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
+			if(ci >= 0 && ci % 2 == 0) {	// min
+				cond = cond + model_table.table_name + '.' + model_table.condition_range[ci+1] + ' >= ? AND ';
+			} else if(ci >= 0 && ci % 2 == 1) {	// max
+				cond = cond + model_table.table_name + '.' + model_table.condition_range[ci-1] + ' <= ? AND ';
+			} else {
+				cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
+			}
+			//cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
 			index ++;
 		}else if(req.body && req.body[model_table.table_cols[i]]){
 			sql_params[index] = req.body[model_table.table_cols[i]];
-			cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
+			if(ci >= 0 && ci % 2 == 0) {	// min
+				cond = cond + model_table.table_name + '.' + model_table.condition_range[ci+1] + ' >= ? AND ';
+			} else if(ci >= 0 && ci % 2 == 1) {	// max
+				cond = cond + model_table.table_name + '.' + model_table.condition_range[ci-1] + ' <= ? AND ';
+			} else {
+				cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
+			}
+			//cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
 			index ++;
 		}
 	});
@@ -211,6 +234,7 @@ pool.addOne = function(req, table_name, callback) {
     var sql = 'insert into ' + table_name + ' set ?';
     var post = {}; 
 
+	//console.log(req.query);
     table_cols.forEach(function(v,i,arr){
         //console.log('-- foreach ', i ,' -- ');
         if(i != 0){ 

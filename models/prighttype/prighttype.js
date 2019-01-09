@@ -25,6 +25,7 @@ function prighttype(){
 	
 	oPrighttype.table_name = 'prighttype';
 	oPrighttype.table_cols = ['prId','name','status','operId','operTime'];
+	oPrighttype.condition_range = [];
 
 	oPrighttype.table_cross_fkey = [];	
 	oPrighttype.table_cross_name = [];	

@@ -24,7 +24,8 @@ function houselayout(){
 	oHouselayout.table_cross_checked = false;
 	
 	oHouselayout.table_name = 'houselayout';
-	oHouselayout.table_cols = ['hlId','pId','livingroomNum','bedroomNum','bathroomNum','typeId','minPrice','maxPrice','fitmentId','withPool','withTerrace','picture1','picture2','picture3','picture4'];
+	oHouselayout.table_cols = ['hlId','pId','livingroomNum','bedroomNum','bathroomNum','typeId','hlSquare','minPrice','maxPrice','fitmentId','withPool','withTerrace','picture1','picture2','picture3','picture4'];
+	oHouselayout.condition_range = [];
 
 	oHouselayout.table_cross_fkey = ['typeId','fitmentId'];	
 	oHouselayout.table_cross_name = ['housetype','fitmenttype'];	

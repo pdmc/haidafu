@@ -25,6 +25,7 @@ function myactivity(){
 	
 	oMyactivity.table_name = 'myactivity';
 	oMyactivity.table_cols = ['maId','userId','actId','status','applyTime'];
+	oMyactivity.condition_range = [];
 
 	oMyactivity.table_cross_fkey = ['actId'];	
 	oMyactivity.table_cross_name = ['pkactivity'];	

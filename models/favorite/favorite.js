@@ -25,6 +25,7 @@ function favorite(){
 	
 	oFavorite.table_name = 'favorite';
 	oFavorite.table_cols = ['fId','userId','pId','articleId','createTime'];
+	oFavorite.condition_range = [];
 
 	oFavorite.table_cross_fkey = [];	
 	oFavorite.table_cross_name = [];	

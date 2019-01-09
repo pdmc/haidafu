@@ -25,6 +25,7 @@ function pkprovider(){
 	
 	oPkprovider.table_name = 'pkprovider';
 	oPkprovider.table_cols = ['spId','spName','description','imgurl'];
+	oPkprovider.condition_range = [];
 
 	oPkprovider.table_cross_fkey = [];	
 	oPkprovider.table_cross_name = [];	

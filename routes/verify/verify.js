@@ -7,47 +7,17 @@
 var express = require('express');
 var router = express.Router();
 var conn = require('../common/database');
+var Verify= require('../../models/verify/verify.js');
 
-const table_name = 'pkproject';
+var verify = new Verify();
 
-/* GET all listing. */
-router.get('/', function(req, res, next) {
-	var cbfunc = function(error, results, fields) {
-		if(error){
-			console.log(error);
-		}
-		var retjson = {"code":0,"data":[]};
-		if(results && results.length > 0){
-			retjson.data = results;
-		}
-		//res.json(JSON.stringify(retjson));
-        //res.end('is over');
-		res.send(JSON.stringify(retjson));
-		console.log('all listing json sent over. ');
-	};
-	conn.queryList(req, table_name, cbfunc);
-	console.log("all listing first here"); 
-});
+const table_name = verify.table_name; 
+const table_cols = verify.table_cols;
+
+//console.log(table_name);
 
 /* GET condition listing. */
 router.get('/getbycond', function(req, res, next) {
-	var retjson = {"code":0,"data":[]};
-	var cbfunc = function(error, results, fields) {
-		if(error){
-			console.log(error);
-		}
-		if(results.length > 0){
-			retjson.data = results;
-		}
-		res.send(JSON.stringify(retjson));
-		console.log('condition listing json sent over. ');
-	};
-	conn.queryList(req, table_name, cbfunc);
-	console.log("condition listing first here"); 
-});
-
-/* POST condition listing. */
-router.post('/getbycond', function(req, res, next) {
 	var retjson = {"code":0,"data":[]};
 	var cbfunc = function(error, results, fields) {
 		if(error){
@@ -81,22 +51,93 @@ router.get('/getbyid', function(req, res, next) {
 });
 
 /*
- * add one
+ * sendverify
  */
-router.get('/add', function(req, res, next) {
+router.get('/sendverify', function(req, res, next) {
 	var retjson = {"code":0,"msg":"ok"};
-
 	var cbfunc = function(error, results, fields) {
 		if(error){
 			console.log(error);
 		}
-		retjson.pId = results?results.insertId:'-1';
+		retjson.veriId = results?results.insertId:'-1';
 		res.send(JSON.stringify(retjson));
         //res.end('is over');
-		console.log('sql add over ');
+		console.log(table_name + ' sql add over ');
 	};
-	conn.addOne(req, table_name, cbfunc);
-	console.log("sql add first here"); 
+	console.log(req.query);
+	var phone = req.query['mobile']; 
+	var code = 1000 + parseInt(8999*Math.random());
+	var ts = parseInt(Date.now()/1000);
+
+	req.query['code'] = code;
+	req.query['timestamp'] = ts;
+	req.query['phone'] = parseInt(phone);
+
+	var http = require('http');  
+	var qs = require('querystring'); 
+	const crypto = require('crypto');
+	const hash = crypto.createHash('md5');
+	// 可任意多次调用update():
+	hash.update(code.toString());
+	var magic = hash.digest('hex').substr(16);
+	//console.log(magic);
+ 
+	var data = {  
+	    phone: phone, 
+	    code: code,  
+	    minutes: 5,  
+		magic: magic
+	};
+	var content = qs.stringify(data);  
+	console.log(content);
+	var options = {  
+	    hostname: 'sendsms.pk4yo.com',  
+	    port: 80,  
+	    path: '/sms.php?' + content,  
+	    method: 'GET'  
+	};  
+	var reqsms = http.request(options, function (resms) {  
+	    console.log('STATUS: ' + resms.statusCode);  
+	    //console.log('HEADERS: ' + JSON.stringify(res.headers));  
+	    resms.setEncoding('utf8');  
+	    resms.on('data', function (data) {  
+	        console.log('BODY: ' + data.trim() + '-' + data.trim().length); 
+			if(data.trim() == '0'){
+				conn.addOne(req, table_name, cbfunc);
+				console.log(table_name + " sql add first here"); 
+			} else {
+				res.send(JSON.stringify(retjson));
+				console.log(table_name + ' sql add over ');
+			}
+	    });  
+	});  
+	reqsms.on('error', function (e) {  
+	    console.log(table_name + ' problem with sms.php: ' + e.message);  
+	});  
+	reqsms.end();  
+
+});
+
+/*
+ * verify
+ */
+router.get('/verify', function(req, res, next) {
+	var retjson = {"code":0,"pass":false,"msg":""};
+	var cbfunc = function(error, results, fields) {
+		if(error){
+			console.log(error);
+		}
+		if(results.length > 0){
+			//retjson.data = results;
+			var ts = results[0].timestamp;
+			var tsnow = parseInt(Date.now()/1000);
+			if(tsnow - ts < 300) retjson.pass = true;
+		}
+		res.send(JSON.stringify(retjson));
+		console.log(table_name + ' one by cond json sent over. ');
+	};
+	conn.queryList(req, table_name, cbfunc);
+	console.log(table_name + " get one by id and code first here"); 
 });
 
 /*
@@ -113,7 +154,7 @@ router.get('/addifnotexist', function(req, res, next) {
 				if(error){
 					console.log(error);
 				}
-				retjson.pId = results?results.insertId:'-1';
+				retjson.hbId = results?results.insertId:'-1';
 				res.send(JSON.stringify(retjson));
     		    //res.end('is over');
 				console.log('sql add over');
@@ -122,7 +163,7 @@ router.get('/addifnotexist', function(req, res, next) {
 			console.log("sql add first here"); 
 
 		}else{
-			retjson.pId = results[0].pId;
+			retjson.hbId = results[0].hbId;
 			res.send(JSON.stringify(retjson));
 			console.log('sql query over');
 		}

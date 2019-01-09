@@ -20,10 +20,12 @@ var myactivityRouter = require('./routes/myactivity/myactivity');
 var favoritesRouter = require('./routes/favorites/favorites');
 var reservationsRouter = require('./routes/reservations/reservations');
 var hongbaosRouter = require('./routes/hongbaos/hongbaos');
+var layoutsRouter = require('./routes/layouts/layouts');
 var typesRouter = require('./routes/types/types');
 var fitmentsRouter = require('./routes/fitments/fitments');
 var prightsRouter = require('./routes/prights/prights');
 var areasRouter = require('./routes/areas/areas');
+var verifyRouter = require('./routes/verify/verify');
 
 var app = express();
 /*
@@ -78,10 +80,12 @@ app.use('/myactivity', myactivityRouter);
 app.use('/favorites', favoritesRouter);
 app.use('/reservations', reservationsRouter);
 app.use('/hongbaos', hongbaosRouter);
+app.use('/layouts', layoutsRouter);
 app.use('/types', typesRouter);
 app.use('/fitments', fitmentsRouter);
 app.use('/prights', prightsRouter);
 app.use('/areas', areasRouter);
+app.use('/verify', verifyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

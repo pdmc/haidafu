@@ -78,6 +78,12 @@ router.post('/login', function(req, res, next) {
 	var post = {};
 	var login = false;
 	var retjson = {"code":0,"userId":-1,"msg":""};
+	
+	if(req.body && req.body['channel']){
+		post['channel'] = req.body['channel'];
+	} else {
+		post['channel'] = 'wx';
+	}
 
 	console.log('----------- user login -----------');
 	if(true){
@@ -137,11 +143,19 @@ router.post('/login', function(req, res, next) {
     	//conn.queryOneById(req, table_name, cbfunc);
     	conn.queryOneByCol(req, table_name, 'openid', cbfunc);
 	} else {
-		console.log('users::login 2 no openid, login to wx');
-		// code2session
-		var appID = 'wx7703e7582335f2be';
-		var secret = '98cad5a162c99f33061c89c00bd95a52';
-		url = 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appID + '&secret=' + secret + '&js_code=' + post['js_code'] + '&grant_type=authorization_code';
+		if(post['channel'] == 'baidu'){
+			console.log('users::login 2 no openid, login to Baidu');
+			// code2session
+			var client_id = 'e0qoQllGoRFzjKo3aBdGNqIC8lHGB9WV';
+			var sk = '9sUv9hocp8DqshlKnnxyo94XKEXAMVTv';
+			url = 'https://openapi.baidu.com/nalogin/getSessionKeyByCode?client_id=' + client_id + '&sk=' + sk + '&code=' + post['js_code']; 
+		} else {
+			console.log('users::login 2 no openid, login to Weixin');
+			// code2session
+			var appID = 'wx0ed3304ac1a87a06';
+			var secret = '9127a87254ac0bab8fbb53d09e9c75e6';
+			url = 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appID + '&secret=' + secret + '&js_code=' + post['js_code'] + '&grant_type=authorization_code';
+		}
 		console.log(url);
 	    https.get(url, (resp) => {
 	        //    res.send(JSON.stringify({openid:data.openid,session_key:data.session_key}));
@@ -158,7 +172,7 @@ router.post('/login', function(req, res, next) {
 	    	
 				if(json.openid == undefined){
 					retjson.code = -1;
-					retjson.msg = "wx openid get fail";
+					retjson.msg = "openid get fail";
 	    	    	res.send(JSON.stringify(retjson));
 					return;
 				}
@@ -183,7 +197,7 @@ router.post('/login', function(req, res, next) {
 							}
 							console.log(results);
 							retjson.userId = results?results.insertId:'-1';
-							retjson.openid = results?results.openid:'-1';
+							retjson.openid = json.openid; //results?results.openid:'-1';
 							res.send(JSON.stringify(retjson));
 	    				    //res.end('is over');
 							console.log('user register over ');

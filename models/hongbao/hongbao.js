@@ -25,6 +25,7 @@ function hongbao(){
 	
 	oHongbao.table_name = 'hongbao';
 	oHongbao.table_cols = ['hbId','userId','pId','amount','state','createTime','useTime','source'];
+	oHongbao.condition_range = [];
 
 	oHongbao.table_cross_fkey = ['pId'];	
 	oHongbao.table_cross_name = ['pkproject'];	

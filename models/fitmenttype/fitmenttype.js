@@ -25,6 +25,7 @@ function fitmenttype(){
 	
 	oFitmenttype.table_name = 'fitmenttype';
 	oFitmenttype.table_cols = ['ftId','name','status','operId','operTime'];
+	oFitmenttype.condition_range = [];
 
 	oFitmenttype.table_cross_fkey = [];	
 	oFitmenttype.table_cross_name = [];	

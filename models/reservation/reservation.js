@@ -25,6 +25,7 @@ function reservation(){
 	
 	oReservation.table_name = 'reservation';
 	oReservation.table_cols = ['rId','userId','pId','status','applyTime','trueName','phone'];
+	oReservation.condition_range = [];
 
 	oReservation.table_cross_fkey = ['pId'];	
 	oReservation.table_cross_name = ['pkproject'];	

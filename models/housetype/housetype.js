@@ -25,6 +25,7 @@ function housetype(){
 	
 	oHousetype.table_name = 'housetype';
 	oHousetype.table_cols = ['typeId','name','status','operId','operTime'];
+	oHousetype.condition_range = [];
 
 	oHousetype.table_cross_fkey = [];	
 	oHousetype.table_cross_name = [];	
