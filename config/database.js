@@ -11,7 +11,7 @@ var dbconfig = {
   user     : 'pk4yo',              
   password : 'zzeP6GAkZ5qt',       
   port     : '3306',                   
-  database : 'hdf_dev' 
+  database : 'hdf_online' 
 }; 
  
 module.exports = dbconfig;
