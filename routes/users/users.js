@@ -115,27 +115,49 @@ router.post('/login', function(req, res, next) {
     		}   
     		if(results.length > 0){ 	// find user 
 				console.log('users::login  11 find user');
-				console.log(results);
-    		    retjson.userId = results[0].userId;
-    		    retjson.openid = results[0].openid;
-    		    //retjson.trueName = results[0].trueName;
-    		    retjson.mobile = results[0].phone;
-    	    	res.send(JSON.stringify(retjson));
+				//console.log(results);
+				if(results[0].nickName != post['nickName']){ // user update
+					req.body["userId"] = results[0].userId;
+					var cbfunc1 = function(error, results1, fields) {
+						if(error){
+							console.log(error);
+						}
+						//console.log(results1);
+    		    		retjson.userId = results[0].userId;
+    		    		retjson.openid = results[0].openid;
+    		    		retjson.mobile = results[0].phone;
+						res.send(JSON.stringify(retjson));
+						console.log(table_name + ' sql update over: ');
+    				    //res.end('is over');
+						//console.log('connected as id ' + conn.threadId);
+						//conn.releaseConnection();
+					};
+					conn.updateOne(post, table_name, cbfunc1);
+					console.log("user sql update first here 111"); 
+				} else {
+    		    	retjson.userId = results[0].userId;
+    		    	retjson.openid = results[0].openid;
+    		    	//retjson.trueName = results[0].trueName;
+    		    	retjson.mobile = results[0].phone;
+    	    		res.send(JSON.stringify(retjson));
+					console.log("user found, no update. 112"); 
+				}
     		 } else { 	// no user, register
-				console.log('users::login  12 no user, to register');
+				console.log('users::login  no user, to register. 12');
 				conn.query(sql_insert, post, function(error, results, fields) {  // L4: insert user
 						if(error){
 							console.log(error);
 						}
 						console.log(results);
 						retjson.userId = results?results.insertId:'-1';
+    		    		retjson.openid = post['openid'];
 						//retjson.openid = results?results.openid:'-1';  // no register, no openid
 						res.send(JSON.stringify(retjson));
     				    //res.end('is over');
-						console.log('user register over 1');
+						console.log('user register over. 120');
 						return;
 				});
-				console.log("sql add first here 1"); 
+				console.log("sql add first here 12"); 
 			}
     		//res.send(JSON.stringify(retjson));
     		console.log('find user by openid json sent over. 1');
@@ -144,13 +166,13 @@ router.post('/login', function(req, res, next) {
     	conn.queryOneByCol(req, table_name, 'openid', cbfunc);
 	} else {
 		if(post['channel'] == 'baidu'){
-			console.log('users::login 2 no openid, login to Baidu');
+			console.log('users::login no openid, login to Baidu. 2');
 			// code2session
 			var client_id = 'e0qoQllGoRFzjKo3aBdGNqIC8lHGB9WV';
 			var sk = '9sUv9hocp8DqshlKnnxyo94XKEXAMVTv';
 			url = 'https://openapi.baidu.com/nalogin/getSessionKeyByCode?client_id=' + client_id + '&sk=' + sk + '&code=' + post['js_code']; 
 		} else {
-			console.log('users::login 2 no openid, login to Weixin');
+			console.log('users::login no openid, login to Weixin. 2');
 			// code2session
 			var appID = 'wx0ed3304ac1a87a06';
 			var secret = '9127a87254ac0bab8fbb53d09e9c75e6';
@@ -184,11 +206,32 @@ router.post('/login', function(req, res, next) {
 	    		    }   
 	    		    if(results.length > 0){ 	// find user 
 						console.log('users::login  21  find user');
-						console.log(results);
-	    		        retjson.userId = results[0].userId;
-	    		        retjson.openid = results[0].openid;
-	    		        retjson.mobile = results[0].phone;
-	    	    		res.send(JSON.stringify(retjson));
+						//console.log(results);
+						if(results[0].nickName != post['nickName']){ // user update
+							req.body["userId"] = results[0].userId;
+							var cbfunc1 = function(error, results1, fields) {
+								if(error){
+									console.log(error);
+								}
+								//console.log(results1);
+    		    				retjson.userId = results[0].userId;
+    		    				retjson.openid = results[0].openid;
+    		    				retjson.mobile = results[0].phone;
+								res.send(JSON.stringify(retjson));
+								console.log(table_name + ' sql update over 211');
+    						    //res.end('is over');
+								//console.log('connected as id ' + conn.threadId);
+								//conn.releaseConnection();
+							};
+							conn.updateOne(req, table_name, cbfunc1);
+							console.log("user sql update first here 211"); 
+						} else {
+	    		        	retjson.userId = results[0].userId;
+	    		        	retjson.openid = results[0].openid;
+	    		        	retjson.mobile = results[0].phone;
+	    	    			res.send(JSON.stringify(retjson));
+							console.log("user sql update first here 212"); 
+						}
 	    		    } else { 	// no user, register
 						console.log('users::login  22 no user, to register');
 						conn.query(sql_insert, post, function(error, results, fields) {  // L4: insert user
