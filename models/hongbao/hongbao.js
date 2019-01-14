@@ -31,6 +31,7 @@ function hongbao(){
 	oHongbao.table_cross_name = ['pkproject'];	
 	oHongbao.table_cross_cols = [['pId','pName','minSquare','maxSquare','minPrice','maxPrice',
 								{fkey:'countryId', table: 'area', cols: ['addrId', 'name' ]},
+								{fkey:'cityId', table: 'area', cols: ['addrId', 'name' ]},
 								'thumbnail']];	
 	oHongbao.table_cross_column_as = []; 	
 	

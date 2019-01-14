@@ -26,7 +26,7 @@ function area(){
 	this.table_name = 'this pkproject';
 	oArea.table_name = 'area';
 	oArea.table_cols = ['addrId','name','parentId','level'];
-	oArea.condition_range = [];
+	//oArea.condition_range = [];
 
 	oArea.table_cross_fkey = [];	
 	oArea.table_cross_name = [];	

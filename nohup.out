@@ -1,4 +1,3 @@
-nohup: 忽略输入
 
 > haidafu@0.0.0 start /var/www/haidafu
 > node ./bin/www
@@ -63,46 +62,6 @@ check_table_cross:  this.table_cross_name arrays checked !!!
 --- enter __prepare_select_sql ---
 SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND  1=1 
 first here
-all listing first here
-all listing json sent over. 
---- enter pool.queryList ---
-/var/www/haidafu/models/pkproject/pkproject.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND  1=1 
-first here
-all listing first here
-all listing json sent over. 
---- enter pool.queryList ---
-/var/www/haidafu/models/pkactivity/pkactivity.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
-first here
-all listing first here
---- enter pool.queryList ---
-/var/www/haidafu/models/pkproject/pkproject.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND  1=1 
-first here
-condition listing first here
-all listing json sent over. 
-condition listing json sent over. 
---- enter pool.queryList ---
-/var/www/haidafu/models/pkproject/pkproject.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND  1=1 
-first here
 condition listing first here
 --- enter pool.queryList ---
 /var/www/haidafu/models/pkactivity/pkactivity.js
@@ -113,228 +72,195 @@ check_table_cross:  this.table_cross_name arrays checked !!!
 SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
 first here
 all listing first here
-all listing json sent over. 
 condition listing json sent over. 
---- enter pool.queryList ---
-/var/www/haidafu/models/pkproject/pkproject.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND  1=1 
-first here
-condition listing first here
-condition listing json sent over. 
---- enter pool.queryList ---
-/var/www/haidafu/models/pkactivity/pkactivity.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
-first here
-all listing first here
 all listing json sent over. 
---- enter pool.queryList ---
-/var/www/haidafu/models/pkactivity/pkactivity.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
-first here
-all listing first here
-all listing json sent over. 
---- enter pool.queryList ---
-/var/www/haidafu/models/pkproject/pkproject.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND  1=1 
-first here
-condition listing first here
-condition listing json sent over. 
 ----------- user login -----------
 { channel: 'baidu',
-  nickName: '大吉上上签',
-  gender: '未知',
-  avatarUrl: 'https://himg.bdimg.com/sys/portrait/item/49ecb02b' }
-users::login 2 no openid, login to Baidu
-https://openapi.baidu.com/nalogin/getSessionKeyByCode?client_id=e0qoQllGoRFzjKo3aBdGNqIC8lHGB9WV&sk=9sUv9hocp8DqshlKnnxyo94XKEXAMVTv&code=undefined
-{"errno":1104,"error":"invalid code , expired or revoked","error_description":"invalid code , expired or revoked"}
-jscode2session:   eeeeennnnnddddd
------------ user login -----------
-{ channel: 'baidu',
-  nickName: '大吉上上签',
-  gender: '未知',
-  avatarUrl: 'https://himg.bdimg.com/sys/portrait/item/49ecb02b' }
-users::login 2 no openid, login to Baidu
-https://openapi.baidu.com/nalogin/getSessionKeyByCode?client_id=e0qoQllGoRFzjKo3aBdGNqIC8lHGB9WV&sk=9sUv9hocp8DqshlKnnxyo94XKEXAMVTv&code=undefined
---- enter pool.queryList ---
-/var/www/haidafu/models/houselayout/houselayout.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT houselayout.hlId, houselayout.pId, houselayout.livingroomNum, houselayout.bedroomNum, houselayout.bathroomNum, houselayout.typeId, houselayout.hlSquare, houselayout.minPrice, houselayout.maxPrice, houselayout.fitmentId, houselayout.withPool, houselayout.withTerrace, houselayout.picture1, houselayout.picture2, houselayout.picture3, houselayout.picture4, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, housetype.status AS housetype__status, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, fitmenttype.status AS fitmenttype__status FROM houselayout, housetype, fitmenttype WHERE houselayout.typeId = housetype.typeId AND houselayout.fitmentId = fitmenttype.ftId AND houselayout.pId = ? AND  1=1 
-first here
-condition listing first here
-{"errno":1104,"error":"invalid code , expired or revoked","error_description":"invalid code , expired or revoked"}
-jscode2session:   eeeeennnnnddddd
-condition listing json sent over. 
+  nickName: '无忧移民',
+  gender: 1,
+  avatarUrl:
+   'https://himg.bdimg.com/sys/portrait/item/b89d6261696c696e323031313631386222',
+  js_code: '29421af66d47aab335e63fd8bf950f75' }
+users::login no openid, login to Baidu. 2
+https://openapi.baidu.com/nalogin/getSessionKeyByCode?client_id=e0qoQllGoRFzjKo3aBdGNqIC8lHGB9WV&sk=9sUv9hocp8DqshlKnnxyo94XKEXAMVTv&code=29421af66d47aab335e63fd8bf950f75
+{"openid":"mE1X4n4uJt9UQPM_ZTWCFeKwas","session_key":"f8a27de13abe5f9d1a5d383d67e9e9d0"}
 --- enter pool.queryOneById ---
-/var/www/haidafu/models/pkproject/pkproject.js
+/var/www/haidafu/models/pkuser/pkuser.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
 --- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND pkproject.pId = ?
+SELECT DISTINCT pkuser.userId, pkuser.nickName, pkuser.trueName, pkuser.phone, pkuser.gender, pkuser.language, pkuser.city, pkuser.province, pkuser.country, pkuser.avatarUrl, pkuser.js_code, pkuser.openid, pkuser.token, pkuser.session_key, pkuser.sessionid, pkuser.channel FROM pkuser WHERE pkuser.openid = ?
 first here
-get one by id first here
-one by id json sent over. 
+jscode2session:   eeeeennnnnddddd
+users::login  21  find user
+[ RowDataPacket {
+    userId: 13,
+    nickName: '百度网友',
+    trueName: '等等',
+    phone: '13601071629',
+    gender: 1,
+    language: 'zh_CN',
+    city: null,
+    province: null,
+    country: null,
+    avatarUrl: 'https://b.bdstatic.com/miniapp/resource/image/headImg.png',
+    js_code: 'a83f4ab9557bcf383f6b38074ce11bde',
+    openid: 'mE1X4n4uJt9UQPM_ZTWCFeKwas',
+    token: null,
+    session_key: 'f8a27de13abe5f9d1a5d383d67e9e9d0',
+    sessionid: null,
+    channel: 'baidu' } ]
+--- enter pool.updateOne ---
+/var/www/haidafu/models/pkuser/pkuser.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+{}
+UPDATE pkuser SET nickName = ? , gender = ? , avatarUrl = ? , openid = ? , channel = ?  WHERE userId = ?
+sql update first here
+user sql update first here 211
+find user by openid json sent over. 
+OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1 }
+pkuser sql update over 211
 --- enter pool.queryList ---
 /var/www/haidafu/models/hongbao/hongbao.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
 --- enter __prepare_select_sql ---
-SELECT DISTINCT hongbao.hbId, hongbao.userId, hongbao.pId, hongbao.amount, hongbao.state, hongbao.createTime, hongbao.useTime, hongbao.source, pkproject.pId AS pkproject__pId, pkproject.pName AS pkproject__pName, pkproject.minSquare AS pkproject__minSquare, pkproject.maxSquare AS pkproject__maxSquare, pkproject.minPrice AS pkproject__minPrice, pkproject.maxPrice AS pkproject__maxPrice, countryId__area.addrId AS countryId__area__addrId, countryId__area.name AS countryId__area__name, pkproject.thumbnail AS pkproject__thumbnail FROM hongbao, pkproject, (select * from area) as countryId__area WHERE hongbao.pId = pkproject.pId AND countryId__area.addrId = pkproject.countryId AND hongbao.userId = ? AND hongbao.pId = ? AND  1=1 
+SELECT DISTINCT hongbao.hbId, hongbao.userId, hongbao.pId, hongbao.amount, hongbao.state, hongbao.createTime, hongbao.useTime, hongbao.source, pkproject.pId AS pkproject__pId, pkproject.pName AS pkproject__pName, pkproject.minSquare AS pkproject__minSquare, pkproject.maxSquare AS pkproject__maxSquare, pkproject.minPrice AS pkproject__minPrice, pkproject.maxPrice AS pkproject__maxPrice, countryId__area.addrId AS countryId__area__addrId, countryId__area.name AS countryId__area__name, cityId__area.addrId AS cityId__area__addrId, cityId__area.name AS cityId__area__name, pkproject.thumbnail AS pkproject__thumbnail FROM hongbao, pkproject, (select * from area) as countryId__area, (select * from area) as cityId__area WHERE hongbao.pId = pkproject.pId AND countryId__area.addrId = pkproject.countryId AND cityId__area.addrId = pkproject.cityId AND hongbao.userId = ? AND  1=1 
 first here
 condition listing first here
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/myactivity/myactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+--- enter __prepare_select_sql ---
+SELECT DISTINCT myactivity.maId, myactivity.userId, myactivity.actId, myactivity.status, myactivity.applyTime, pkactivity.actId AS pkactivity__actId, pkactivity.subject AS pkactivity__subject, pkactivity.address AS pkactivity__address, pkactivity.startTime AS pkactivity__startTime, pkactivity.endTime AS pkactivity__endTime, pkactivity.imgurl AS pkactivity__imgurl FROM myactivity, pkactivity WHERE myactivity.actId = pkactivity.actId AND myactivity.userId = ? AND  1=1 
+first here
+condition listing first here
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/reservation/reservation.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+--- enter __prepare_select_sql ---
+SELECT DISTINCT reservation.rId, reservation.userId, reservation.pId, reservation.status, reservation.applyTime, reservation.trueName, reservation.phone, pkproject.pId AS pkproject__pId, pkproject.pName AS pkproject__pName, pkproject.minSquare AS pkproject__minSquare, pkproject.maxSquare AS pkproject__maxSquare, pkproject.minPrice AS pkproject__minPrice, pkproject.maxPrice AS pkproject__maxPrice, countryId__area.addrId AS countryId__area__addrId, countryId__area.name AS countryId__area__name, cityId__area.addrId AS cityId__area__addrId, cityId__area.name AS cityId__area__name, pkproject.thumbnail AS pkproject__thumbnail FROM reservation, pkproject, (select * from area) as countryId__area, (select * from area) as cityId__area WHERE reservation.pId = pkproject.pId AND countryId__area.addrId = pkproject.countryId AND cityId__area.addrId = pkproject.cityId AND reservation.userId = ? AND  1=1 
+first here
+condition listing first here
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/favorite/favorite.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+--- enter __prepare_select_sql ---
+SELECT DISTINCT favorite.fId, favorite.userId, favorite.pId, favorite.articleId, favorite.createTime, pkproject.pId AS pkproject__pId, pkproject.pName AS pkproject__pName, pkproject.minSquare AS pkproject__minSquare, pkproject.maxSquare AS pkproject__maxSquare, pkproject.minPrice AS pkproject__minPrice, pkproject.maxPrice AS pkproject__maxPrice, countryId__area.addrId AS countryId__area__addrId, countryId__area.name AS countryId__area__name, cityId__area.addrId AS cityId__area__addrId, cityId__area.name AS cityId__area__name, pkproject.thumbnail AS pkproject__thumbnail FROM favorite, pkproject, (select * from area) as countryId__area, (select * from area) as cityId__area WHERE favorite.pId = pkproject.pId AND countryId__area.addrId = pkproject.countryId AND cityId__area.addrId = pkproject.cityId AND favorite.userId = ? AND  1=1 
+first here
+condition listing first here
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND  1=1 
+first here
+condition listing first here
+all listing json sent over. 
+condition listing json sent over. 
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkproject/pkproject.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND  1=1 
+first here
+condition listing first here
+--- enter pool.queryList ---
+/var/www/haidafu/models/pkactivity/pkactivity.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
+first here
+all listing first here
+condition listing json sent over. 
+all listing json sent over. 
 ----------- user login -----------
 { channel: 'baidu',
-  nickName: '大吉上上签',
-  gender: '未知',
-  avatarUrl: 'https://himg.bdimg.com/sys/portrait/item/49ecb02b' }
-users::login 2 no openid, login to Baidu
-https://openapi.baidu.com/nalogin/getSessionKeyByCode?client_id=e0qoQllGoRFzjKo3aBdGNqIC8lHGB9WV&sk=9sUv9hocp8DqshlKnnxyo94XKEXAMVTv&code=undefined
-condition listing json sent over. 
-{"errno":1104,"error":"invalid code , expired or revoked","error_description":"invalid code , expired or revoked"}
+  nickName: '无忧移民',
+  gender: 1,
+  avatarUrl:
+   'https://himg.bdimg.com/sys/portrait/item/b89d6261696c696e323031313631386222',
+  js_code: '6683d89488fb173d9232879470309463' }
+users::login no openid, login to Baidu. 2
+https://openapi.baidu.com/nalogin/getSessionKeyByCode?client_id=e0qoQllGoRFzjKo3aBdGNqIC8lHGB9WV&sk=9sUv9hocp8DqshlKnnxyo94XKEXAMVTv&code=6683d89488fb173d9232879470309463
+{"openid":"mE1X4n4uJt9UQPM_ZTWCFeKwas","session_key":"f8a27de13abe5f9d1a5d383d67e9e9d0"}
+--- enter pool.queryOneById ---
+/var/www/haidafu/models/pkuser/pkuser.js
+--- enter check_table_cross ---
+/var/www/haidafu/models/util/util.js
+check_table_cross:  this.table_cross_name arrays checked !!! 
+--- enter __prepare_select_sql ---
+SELECT DISTINCT pkuser.userId, pkuser.nickName, pkuser.trueName, pkuser.phone, pkuser.gender, pkuser.language, pkuser.city, pkuser.province, pkuser.country, pkuser.avatarUrl, pkuser.js_code, pkuser.openid, pkuser.token, pkuser.session_key, pkuser.sessionid, pkuser.channel FROM pkuser WHERE pkuser.openid = ?
+first here
 jscode2session:   eeeeennnnnddddd
-{ mobile: '15901183573' }
-phone=15901183573&code=3259&minutes=5&magic=d22c7a8ef823e987
-STATUS: 200
-BODY: 0-1
---- enter pool.addOne ---
-/var/www/haidafu/models/verify/verify.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
-insert into verify set ?
-{ code: 3259, phone: 15901183573, timestamp: 1547032748 }
-sql add first here
-verify sql add first here
-verify sql add over 
+users::login  21  find user
+[ RowDataPacket {
+    userId: 13,
+    nickName: '无忧移民',
+    trueName: '等等',
+    phone: '13601071629',
+    gender: 1,
+    language: 'zh_CN',
+    city: null,
+    province: null,
+    country: null,
+    avatarUrl:
+     'https://himg.bdimg.com/sys/portrait/item/b89d6261696c696e323031313631386222',
+    js_code: 'a83f4ab9557bcf383f6b38074ce11bde',
+    openid: 'mE1X4n4uJt9UQPM_ZTWCFeKwas',
+    token: null,
+    session_key: 'f8a27de13abe5f9d1a5d383d67e9e9d0',
+    sessionid: null,
+    channel: 'baidu' } ]
+user sql update first here 212
+find user by openid json sent over. 
 --- enter pool.queryList ---
-/var/www/haidafu/models/pkproject/pkproject.js
+/var/www/haidafu/models/favorite/favorite.js
 --- enter check_table_cross ---
 /var/www/haidafu/models/util/util.js
 check_table_cross:  this.table_cross_name arrays checked !!! 
 --- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND  1=1 
+SELECT DISTINCT favorite.fId, favorite.userId, favorite.pId, favorite.articleId, favorite.createTime, pkproject.pId AS pkproject__pId, pkproject.pName AS pkproject__pName, pkproject.minSquare AS pkproject__minSquare, pkproject.maxSquare AS pkproject__maxSquare, pkproject.minPrice AS pkproject__minPrice, pkproject.maxPrice AS pkproject__maxPrice, countryId__area.addrId AS countryId__area__addrId, countryId__area.name AS countryId__area__name, cityId__area.addrId AS cityId__area__addrId, cityId__area.name AS cityId__area__name, pkproject.thumbnail AS pkproject__thumbnail FROM favorite, pkproject, (select * from area) as countryId__area, (select * from area) as cityId__area WHERE favorite.pId = pkproject.pId AND countryId__area.addrId = pkproject.countryId AND cityId__area.addrId = pkproject.cityId AND favorite.userId = ? AND  1=1 
 first here
 condition listing first here
---- enter pool.queryList ---
-/var/www/haidafu/models/pkactivity/pkactivity.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
-first here
-all listing first here
-all listing json sent over. 
 condition listing json sent over. 
------------ user login -----------
-{ channel: 'baidu',
-  nickName: '大吉上上签',
-  gender: '未知',
-  avatarUrl: 'https://himg.bdimg.com/sys/portrait/item/49ecb02b' }
-users::login 2 no openid, login to Baidu
-https://openapi.baidu.com/nalogin/getSessionKeyByCode?client_id=e0qoQllGoRFzjKo3aBdGNqIC8lHGB9WV&sk=9sUv9hocp8DqshlKnnxyo94XKEXAMVTv&code=undefined
-{"errno":1104,"error":"invalid code , expired or revoked","error_description":"invalid code , expired or revoked"}
-jscode2session:   eeeeennnnnddddd
---- enter pool.queryList ---
-/var/www/haidafu/models/pkproject/pkproject.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND  1=1 
-first here
-condition listing first here
---- enter pool.queryList ---
-/var/www/haidafu/models/pkactivity/pkactivity.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
-first here
-all listing first here
-all listing json sent over. 
-condition listing json sent over. 
---- enter pool.queryList ---
-/var/www/haidafu/models/pkactivity/pkactivity.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkactivity.actId, pkactivity.subject, pkactivity.address, pkactivity.startTime, pkactivity.endTime, pkactivity.imgurl FROM pkactivity WHERE  1=1 
-first here
-all listing first here
---- enter pool.queryList ---
-/var/www/haidafu/models/pkproject/pkproject.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND  1=1 
-first here
-condition listing first here
-all listing json sent over. 
-condition listing json sent over. 
---- enter pool.queryList ---
-/var/www/haidafu/models/area/area.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT area.addrId, area.name, area.parentId, area.level FROM area WHERE  1=1 
-first here
-all listing first here
---- enter pool.queryList ---
-/var/www/haidafu/models/pkproject/pkproject.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT pkproject.pId, pkproject.pName, pkproject.status, pkproject.minSquare, pkproject.maxSquare, pkproject.minPrice, pkproject.maxPrice, pkproject.countryId, pkproject.provinceId, pkproject.cityId, pkproject.districtId, pkproject.fullAddr, pkproject.prightId, pkproject.handoverYear, pkproject.handoverMonth, pkproject.handoverDay, pkproject.canLoan, pkproject.totalSquare, pkproject.totalAmount, pkproject.predictYearRent, pkproject.localPricePic, pkproject.picture1, pkproject.picture2, pkproject.picture3, pkproject.thumbnail, pkproject.description, pkproject.selected, area__countryId.addrId AS area__countryId__addrId, area__countryId.name AS area__countryId__name, area__provinceId.addrId AS area__provinceId__addrId, area__provinceId.name AS area__provinceId__name, area__cityId.addrId AS area__cityId__addrId, area__cityId.name AS area__cityId__name, prighttype.prId AS prighttype__prId, prighttype.name AS prighttype__name, pkprovider.spId AS pkprovider__spId, pkprovider.spName AS pkprovider__spName, pkprovider.description AS pkprovider__description, pkprovider.imgurl AS pkprovider__imgurl FROM pkproject, (select * from area) as area__countryId, (select * from area) as area__provinceId, (select * from area) as area__cityId, prighttype, pkprovider WHERE pkproject.countryId = area__countryId.addrId AND pkproject.provinceId = area__provinceId.addrId AND pkproject.cityId = area__cityId.addrId AND pkproject.prightId = prighttype.prId AND pkproject.spId = pkprovider.spId AND  1=1 
-first here
-all listing first here
-all listing json sent over. 
-all listing json sent over. 
---- enter pool.queryList ---
-/var/www/haidafu/models/houselayout/houselayout.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT houselayout.hlId, houselayout.pId, houselayout.livingroomNum, houselayout.bedroomNum, houselayout.bathroomNum, houselayout.typeId, houselayout.hlSquare, houselayout.minPrice, houselayout.maxPrice, houselayout.fitmentId, houselayout.withPool, houselayout.withTerrace, houselayout.picture1, houselayout.picture2, houselayout.picture3, houselayout.picture4, housetype.typeId AS housetype__typeId, housetype.name AS housetype__name, housetype.status AS housetype__status, fitmenttype.ftId AS fitmenttype__ftId, fitmenttype.name AS fitmenttype__name, fitmenttype.status AS fitmenttype__status FROM houselayout, housetype, fitmenttype WHERE houselayout.typeId = housetype.typeId AND houselayout.fitmentId = fitmenttype.ftId AND  1=1 
-first here
-all listing first here
---- enter pool.queryList ---
-/var/www/haidafu/models/fitmenttype/fitmenttype.js
---- enter check_table_cross ---
-/var/www/haidafu/models/util/util.js
-check_table_cross:  this.table_cross_name arrays checked !!! 
---- enter __prepare_select_sql ---
-SELECT DISTINCT fitmenttype.ftId, fitmenttype.name, fitmenttype.status, fitmenttype.operId, fitmenttype.operTime FROM fitmenttype WHERE  1=1 
-first here
-all listing first here
-all listing json sent over. 
-all listing json sent over. 
 --- enter pool.queryList ---
 /var/www/haidafu/models/pkactivity/pkactivity.js
 --- enter check_table_cross ---

@@ -11,10 +11,14 @@ var check_table_cross = require('../util/util');
  * table_cross_checked
  * table_name
  * table_cols
+ * condition_range
  * table_cross_fkey
  * table_cross_name
  * table_cross_cols
  * table_cross_column_as
+ * table_contain_fkey
+ * table_contain_name
+ * table_contain_cols
  * check_table_cross()
  *
  */
@@ -45,8 +49,13 @@ function pkproject(){
 							['prId','name'],
 							['spId','spName','description','imgurl']
 	];	
-	
 	oProject.table_cross_column_as = []; 	//'table_cross_value_column'; // 返回值列一一对应上面的查询列，在运行后填充，为：表名+双下划线+列名，如 area__name
+	
+	oProject.table_contain_fkey = ['pId'];	
+	oProject.table_contain_name = ['houselayout'];	
+	oProject.table_contain_cols = [
+							['hlId','livingroomNum','bedroomNum','bathroomNum', 'typeId', 'fitmentId','hlSquare']
+	];	
 	
 	oProject.check_table_cross = check_table_cross;
 	//if (typeof pkproject._initialized == "undefined") {

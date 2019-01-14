@@ -14,12 +14,16 @@ var pool  = mysql.createPool(dbconfig);
  *            ' area = xxx ': select list record, so concate condition string at end
  *
  */
-function __prepare_select_sql(model_table, table_name, condition){
+function __prepare_select_sql(model_table, table_name, condition, options){
 	console.log('--- enter __prepare_select_sql ---');
 	var sql = 'SELECT DISTINCT ';
+	var hasContain = false;
 
 	//console.log(model_table);
 	//console.log(model_table.table_cols);
+	if(options != null && options.hasContain != undefined && options.hasContain) {
+		hasContain = true;
+	}
 
 	// prepare sql sentence
 	// 1. main table
@@ -66,6 +70,15 @@ function __prepare_select_sql(model_table, table_name, condition){
 			});
 		}
 	});
+	if(model_table.table_contain_name != undefined && model_table.table_contain_name.length > 0 && hasContain){
+		model_table.table_contain_name.forEach(function(v,i,arr){
+			if(model_table.table_cross_name.indexOf(model_table.table_contain_name[i]) >= 0)
+				return;
+			model_table.table_contain_cols[i].forEach(function(w,j,arr2){
+				sql = sql + ', ' + model_table.table_contain_name[i] + '.' + model_table.table_contain_cols[i][j] + ' AS ' + model_table.table_contain_name[i] + '__' + model_table.table_contain_cols[i][j];
+			});
+		});
+	}
 	//console.log(sql);
 	
 	// 3. query table names
@@ -89,6 +102,13 @@ function __prepare_select_sql(model_table, table_name, condition){
 			});
 		}
 	});
+	if(model_table.table_contain_name != undefined && model_table.table_contain_name.length > 0 && hasContain){
+		model_table.table_contain_name.forEach(function(v,i,arr){
+			if(model_table.table_cross_name.indexOf(model_table.table_contain_name[i]) >= 0)
+				return;
+			sql = sql + ', ' + model_table.table_contain_name[i];
+		});
+	}
 	//console.log(sql);
 	
 	// 4. query correlative query
@@ -112,6 +132,13 @@ function __prepare_select_sql(model_table, table_name, condition){
 			});
 		}
 	});
+	if(model_table.table_contain_name != undefined && model_table.table_contain_name.length > 0 && hasContain){
+		model_table.table_contain_name.forEach(function(v,i,arr){
+			if(model_table.table_cross_name.indexOf(model_table.table_contain_name[i]) >= 0)
+				return;
+			sql = sql + model_table.table_name + '.' + model_table.table_cols[0] + ' = ' + model_table.table_contain_name[i] + '.' + model_table.table_contain_fkey[i] + ' AND ';
+		});
+	}
 	
 	// 5. condition
 	if(condition.length == 0){
@@ -128,7 +155,7 @@ pool.queryOneById = function(req, table_name, callback){
 	console.log('--- enter pool.queryOneById ---');
 	var ModelTable = require('../../models/' + table_name + '/' + table_name + '.js');
 	var model_table = new ModelTable();
-	var sql = __prepare_select_sql(model_table, table_name, '');
+	var sql = __prepare_select_sql(model_table, table_name, '', null);
 	var sql_params = [0];
 	
 	//	prepare param values
@@ -150,7 +177,7 @@ pool.queryOneByCol = function(req, table_name, col_name, callback){
 	var ModelTable = require('../../models/' + table_name + '/' + table_name + '.js');
 	var model_table = new ModelTable();
 	var cond = table_name + '.' + col_name + ' = ?';
-	var sql = __prepare_select_sql(model_table, table_name, cond);
+	var sql = __prepare_select_sql(model_table, table_name, cond, null);
 	var sql_params = [0];
 	
 	//	prepare param values
@@ -175,11 +202,14 @@ pool.queryList = function(req, table_name, callback){
 	var cond = '';
 	var sql_params = [0];
 	var index = 0;
+	var hasContain = false;
 
 	//console.log(req);
 	//	prepare param values
 	model_table.table_cols.forEach(function(v,i,arr){
-		var ci = model_table.condition_range.indexOf(model_table.table_cols[i]);
+		var ci = -1;
+		if(model_table.condition_range != undefined && model_table.condition_range.length > 0)
+			ci = model_table.condition_range.indexOf(model_table.table_cols[i]);
 		if(req.params && req.params[model_table.table_cols[i]]){
 			sql_params[index] = req.params[model_table.table_cols[i]];
 			if(ci >= 0 && ci % 2 == 0) {	// min
@@ -215,11 +245,34 @@ pool.queryList = function(req, table_name, callback){
 			index ++;
 		}
 	});
+	if(model_table.table_contain_name != undefined && model_table.table_contain_name.length > 0){	// 检查包含表的条件
+		model_table.table_contain_name.forEach(function(v,i,arr){
+			model_table.table_contain_cols[i].forEach(function(w,j,arr2){
+				if(req.params && req.params[model_table.table_contain_name[i] + '__' + model_table.table_contain_cols[i][j]]){
+					sql_params[index] = req.params[model_table.table_contain_name[i] + '__' + model_table.table_contain_cols[i][j]];
+					cond = cond + model_table.table_contain_name[i] + '.' + model_table.table_contain_cols[i][j] + ' = ? AND ';
+					index ++;
+					hasContain = true;
+				}else if(req.query && req.query[model_table.table_contain_name[i] + '__' + model_table.table_contain_cols[i][j]]){
+					sql_params[index] = req.query[model_table.table_contain_name[i] + '__' + model_table.table_contain_cols[i][j]];
+					cond = cond + model_table.table_contain_name[i] + '.' + model_table.table_contain_cols[i][j] + ' = ? AND ';
+					index ++;
+					hasContain = true;
+				}else if(req.body && req.body[model_table.table_contain_name[i] + '__' + model_table.table_contain_cols[i][j]]){
+					sql_params[index] = req.body[model_table.table_contain_name[i] + '__' + model_table.table_contain_cols[i][j]];
+					cond = cond + model_table.table_contain_name[i] + '.' + model_table.table_contain_cols[i][j] + ' = ? AND ';
+					index ++;
+					hasContain = true;
+				}
+			});
+		});
+	}
+	//console.log(index);
 	//console.log(sql_params);
 
 	cond += ' 1=1 ';	// compatible with sql end ' AND '
 	
-	sql = __prepare_select_sql(model_table, table_name, cond);
+	sql = __prepare_select_sql(model_table, table_name, cond, {'hasContain': hasContain});
 	
 	//	execute sql
 	pool.query(sql,sql_params,callback);

@@ -27,9 +27,12 @@ function favorite(){
 	oFavorite.table_cols = ['fId','userId','pId','articleId','createTime'];
 	oFavorite.condition_range = [];
 
-	oFavorite.table_cross_fkey = [];	
-	oFavorite.table_cross_name = [];	
-	oFavorite.table_cross_cols = [];	
+	oFavorite.table_cross_fkey = ['pId'];	
+	oFavorite.table_cross_name = ['pkproject'];	
+	oFavorite.table_cross_cols = [['pId','pName','minSquare','maxSquare','minPrice','maxPrice',
+								  {fkey:'countryId', table: 'area', cols: ['addrId', 'name' ]},
+								  {fkey:'cityId', table: 'area', cols: ['addrId', 'name' ]},
+								  'thumbnail']];	
 	oFavorite.table_cross_column_as = []; 	
 	
 	oFavorite.check_table_cross = check_table_cross;
