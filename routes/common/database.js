@@ -6,8 +6,10 @@
  */
 var express = require('express');
 var mysql  = require('mysql');  
-var dbconfig = require('../../config/database');
-var pool  = mysql.createPool(dbconfig);
+var config = require('../../config/database');
+var pool  = mysql.createPool(config.dbconfig);
+
+pool.cc = config;
 
 /*
  * condition: '': select one record, so concate xxID = ? at end

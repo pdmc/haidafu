@@ -22,6 +22,11 @@ router.get('/', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
+		//console.log(req.headers["x-real-ip"]);
+		//console.log(conn.cc.whitelist);
+		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+			res.setHeader("Access-Control-Allow-Origin", "*");
+		}
 		var retjson = {"code":0,"data":[]};
 		if(results && results.length > 0){
 			retjson.data = results;
@@ -80,6 +85,7 @@ router.get('/add', function(req, res, next) {
 			console.log(error);
 		}
 		retjson.typeId = results?results.insertId:'-1';
+		res.setHeader("Access-Control-Allow-Origin", "*");
 		res.send(JSON.stringify(retjson));
         //res.end('is over');
 		console.log('sql add over ');
@@ -97,6 +103,7 @@ router.get('/addifnotexist', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
+		res.setHeader("Access-Control-Allow-Origin", "*");
 		if(results.length == 0){
 			var cbfunc1 = function(error, results, fields) {
 				if(error){
@@ -131,6 +138,7 @@ router.get('/update', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
+		res.setHeader("Access-Control-Allow-Origin", "*");
 		res.send(JSON.stringify(retjson));
 		console.log('sql update over: ');
         //res.end('is over');
@@ -152,6 +160,7 @@ router.get('/delete', function(req, res, next) {
 		}
 		//res.json(JSON.stringify(retjson));
         //res.end('is over');
+		res.setHeader("Access-Control-Allow-Origin", "*");
 		res.send(JSON.stringify(retjson));
 		console.log('sql delete over ');
 	};

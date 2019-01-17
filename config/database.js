@@ -13,5 +13,9 @@ var dbconfig = {
   port     : '3306',                   
   database : 'hdf_online' 
 }; 
- 
-module.exports = dbconfig;
+
+var whitelist = ['117.136.38.151'];
+
+var config = { dbconfig: dbconfig, whitelist: whitelist};
+
+module.exports = config;

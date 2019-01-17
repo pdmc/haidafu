@@ -28,6 +28,7 @@ router.get('/', function(req, res, next) {
 		}
 		//res.json(JSON.stringify(retjson));
         //res.end('is over');
+		res.setHeader("Access-Control-Allow-Origin", "*");
 		res.send(JSON.stringify(retjson));
 		console.log('all listing json sent over. ');
 	};
@@ -45,6 +46,7 @@ router.get('/getbycond', function(req, res, next) {
 		if(results.length > 0){
 			retjson.data = results;
 		}
+		res.setHeader("Access-Control-Allow-Origin", "*");
 		res.send(JSON.stringify(retjson));
 		console.log('condition listing json sent over. ');
 	};
@@ -62,6 +64,7 @@ router.get('/getbyid', function(req, res, next) {
 		if(results.length > 0){
 			retjson.data = results;
 		}
+		res.setHeader("Access-Control-Allow-Origin", "*");
 		res.send(JSON.stringify(retjson));
 		console.log('one by id json sent over. ');
 	};
@@ -80,6 +83,7 @@ router.get('/add', function(req, res, next) {
 			console.log(error);
 		}
 		retjson.fId = results?results.insertId:'-1';
+		res.setHeader("Access-Control-Allow-Origin", "*");
 		res.send(JSON.stringify(retjson));
         //res.end('is over');
 		console.log('sql add over ');
@@ -97,6 +101,7 @@ router.get('/addifnotexist', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
+		res.setHeader("Access-Control-Allow-Origin", "*");
 		if(results.length == 0){
 			var cbfunc1 = function(error, results, fields) {
 				if(error){
@@ -132,6 +137,7 @@ router.get('/update', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
+		res.setHeader("Access-Control-Allow-Origin", "*");
 		res.send(JSON.stringify(retjson));
 		console.log('sql update over: ');
         //res.end('is over');
@@ -154,6 +160,7 @@ router.get('/delete', function(req, res, next) {
 		}
 		//res.json(JSON.stringify(retjson));
         //res.end('is over');
+		res.setHeader("Access-Control-Allow-Origin", "*");
 		res.send(JSON.stringify(retjson));
 		console.log('sql delete over ');
 	};
