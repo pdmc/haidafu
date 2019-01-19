@@ -14,7 +14,7 @@ var dbconfig = {
   database : 'hdf_online' 
 }; 
 
-var whitelist = ['117.136.38.151'];
+var whitelist = ['117.136.38.151','223.104.3.14'];
 
 var config = { dbconfig: dbconfig, whitelist: whitelist};
 

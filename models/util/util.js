@@ -52,6 +52,7 @@ function check_table_cross(){
 				}else{
 					//console.log(table_cross_cols[i][j]);
 					table_cross_column_as[i][j] = table_cross_name[i] + '__' + table_cross_cols[i][j];
+					//table_cross_column_as[i][j] = table_cross_fkey[i] + '__' + table_cross_name[i] + '__' + table_cross_cols[i][j];
 					//console.log(table_cross_column_as);
 				}
 			});

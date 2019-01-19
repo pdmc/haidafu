@@ -68,6 +68,7 @@ function __prepare_select_sql(model_table, table_name, condition, options){
 					});
 				}else{
 					sql = sql + ', ' + model_table.table_cross_name[i] + '.' + model_table.table_cross_cols[i][j] + ' AS ' + model_table.table_cross_column_as[i][j];
+					//sql = sql + ', ' + model_table.table_cross_fkey[i] + '__' + model_table.table_cross_name[i] + '.' + model_table.table_cross_cols[i][j] + ' AS ' + model_table.table_cross_column_as[i][j];
 				}
 			});
 		}
@@ -97,6 +98,7 @@ function __prepare_select_sql(model_table, table_name, condition, options){
 			});
 		}else{
 			sql = sql + ', ' + model_table.table_cross_name[i];
+			//sql = sql + ', (select * from ' + model_table.table_cross_name[i]+ ') as ' + model_table.table_cross_fkey[i] + '__' + model_table.table_cross_name[i];
 			model_table.table_cross_cols[i].forEach(function(w,j,array){
 				if(model_table.table_cross_cols[i][j].fkey){
 					sql = sql + ', (select * from ' + model_table.table_cross_cols[i][j].table + ') as ' +  model_table.table_cross_cols[i][j].fkey + '__' + model_table.table_cross_cols[i][j].table;
@@ -127,6 +129,7 @@ function __prepare_select_sql(model_table, table_name, condition, options){
 			});
 		}else{
 			sql = sql + model_table.table_name + '.' + model_table.table_cross_fkey[i] + ' = ' + model_table.table_cross_name[i] + '.' + model_table.table_cross_cols[i][0] + ' AND ';
+			//sql = sql + model_table.table_name + '.' + model_table.table_cross_fkey[i] + ' = ' + model_table.table_cross_fkey[i] + '__' + model_table.table_cross_name[i] + '.' + model_table.table_cross_cols[i][0] + ' AND ';
 			model_table.table_cross_cols[i].forEach(function(w,j,array){
 				if(model_table.table_cross_cols[i][j].fkey){
 					sql = sql + model_table.table_cross_cols[i][j].fkey + '__' + model_table.table_cross_cols[i][j].table + '.' + model_table.table_cross_cols[i][j].cols[0] + ' = ' + model_table.table_cross_name[i] + '.' + model_table.table_cross_cols[i][j].fkey + ' AND ';
@@ -171,7 +174,7 @@ pool.queryOneById = function(req, table_name, callback){
 	
 	//	execute sql
 	pool.query(sql,sql_params,callback);
-	console.log("first here"); 
+	//console.log("first here"); 
 };
 
 pool.queryOneByCol = function(req, table_name, col_name, callback){
@@ -193,7 +196,7 @@ pool.queryOneByCol = function(req, table_name, col_name, callback){
 
 	//	execute sql
 	pool.query(sql,sql_params,callback);
-	console.log("first here"); 
+	//console.log("first here"); 
 };
 
 pool.queryList = function(req, table_name, callback){
@@ -278,7 +281,7 @@ pool.queryList = function(req, table_name, callback){
 	
 	//	execute sql
 	pool.query(sql,sql_params,callback);
-	console.log("first here"); 
+	//console.log("first here"); 
 };
 
 pool.addOne = function(req, table_name, callback) {
@@ -306,7 +309,7 @@ pool.addOne = function(req, table_name, callback) {
     console.log(sql);
     console.log(post);
 	pool.query(sql, post, callback);
-    console.log("sql add first here"); 
+    //console.log("sql add first here"); 
 };
 
 pool.updateOne = function(req, table_name, callback) {
@@ -320,7 +323,7 @@ pool.updateOne = function(req, table_name, callback) {
     var col_len = table_cols.length;
 
     var update_i = 0;
-    console.log(req.query)
+    //console.log(req.query);
     table_cols.forEach(function(v,i,arr){
         //console.log('-- foreach ', i ,' -- ');
         if(i != 0){
@@ -364,7 +367,7 @@ pool.updateOne = function(req, table_name, callback) {
     }
     //console.log(sql_params);
 	pool.query(sql, sql_params, callback);
-    console.log("sql update first here");
+    //console.log("sql update first here");
 };
 
 pool.deleteOne = function(req, table_name, callback) {
@@ -382,8 +385,10 @@ pool.deleteOne = function(req, table_name, callback) {
     }else if(req.body && req.body[table_cols[0]]){
         sql_params[0] = req.body[table_cols[0]];
     }   
+    console.log(sql);
+    console.log(sql_params);
 	pool.query(sql, sql_params, callback);
-    console.log("sql delete first here"); 
+    //console.log("sql delete first here"); 
 };
 
 module.exports = pool;
