@@ -27,11 +27,12 @@ function houselayout(){
 	oHouselayout.table_cols = ['hlId','pId','livingroomNum','bedroomNum','bathroomNum','typeId','hlSquare','minPrice','maxPrice','fitmentId','withPool','withTerrace','picture1','picture2','picture3','picture4'];
 	oHouselayout.condition_range = [];
 
-	oHouselayout.table_cross_fkey = ['typeId','fitmentId'];	
-	oHouselayout.table_cross_name = ['housetype','fitmenttype'];	
+	oHouselayout.table_cross_fkey = ['typeId','fitmentId','pId'];	
+	oHouselayout.table_cross_name = ['housetype','fitmenttype','pkproject'];	
 	oHouselayout.table_cross_cols = [
 									['typeId','name','status'],
-									['ftId','name','status']
+									['ftId','name','status'],
+									['pId','pName']
 	];	
 	oHouselayout.table_cross_column_as = []; 	
 	

@@ -27,12 +27,14 @@ function hongbao(){
 	oHongbao.table_cols = ['hbId','userId','pId','amount','state','createTime','useTime','source'];
 	oHongbao.condition_range = [];
 
-	oHongbao.table_cross_fkey = ['pId'];	
-	oHongbao.table_cross_name = ['pkproject'];	
+	oHongbao.table_cross_fkey = ['pId','userId'];	
+	oHongbao.table_cross_name = ['pkproject','pkuser'];	
 	oHongbao.table_cross_cols = [['pId','pName','minSquare','maxSquare','minPrice','maxPrice',
 								{fkey:'countryId', table: 'area', cols: ['addrId', 'name' ]},
 								{fkey:'cityId', table: 'area', cols: ['addrId', 'name' ]},
-								'thumbnail']];	
+								'thumbnail'],
+								['userId','nickName','avatarUrl']
+	];	
 	oHongbao.table_cross_column_as = []; 	
 	
 	oHongbao.check_table_cross = check_table_cross;

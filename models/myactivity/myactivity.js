@@ -24,12 +24,14 @@ function myactivity(){
 	oMyactivity.table_cross_checked = false;
 	
 	oMyactivity.table_name = 'myactivity';
-	oMyactivity.table_cols = ['maId','userId','actId','status','applyTime'];
+	oMyactivity.table_cols = ['maId','userId','actId','status','applyTime','trueName','phone'];
 	oMyactivity.condition_range = [];
 
-	oMyactivity.table_cross_fkey = ['actId'];	
-	oMyactivity.table_cross_name = ['pkactivity'];	
-	oMyactivity.table_cross_cols = [['actId','subject','address','startTime','endTime','imgurl']];	
+	oMyactivity.table_cross_fkey = ['actId','userId'];	
+	oMyactivity.table_cross_name = ['pkactivity','pkuser'];	
+	oMyactivity.table_cross_cols = [['actId','subject','address','startTime','endTime','imgurl'],
+									['userId','nickName','avatarUrl']
+	];	
 	oMyactivity.table_cross_column_as = []; 	
 	
 	oMyactivity.check_table_cross = check_table_cross;

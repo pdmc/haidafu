@@ -27,12 +27,13 @@ function reservation(){
 	oReservation.table_cols = ['rId','userId','pId','status','applyTime','trueName','phone'];
 	oReservation.condition_range = [];
 
-	oReservation.table_cross_fkey = ['pId'];	
-	oReservation.table_cross_name = ['pkproject'];	
+	oReservation.table_cross_fkey = ['pId','userId'];	
+	oReservation.table_cross_name = ['pkproject','pkuser'];	
 	oReservation.table_cross_cols = [['pId','pName','minSquare','maxSquare','minPrice','maxPrice',
 									  {fkey:'countryId', table: 'area', cols: ['addrId', 'name']},
 									  {fkey:'cityId', table: 'area', cols: ['addrId', 'name']},
-									  'thumbnail']
+									  'thumbnail'],
+									 ['userId','nickName','avatarUrl']
 	];	
 	oReservation.table_cross_column_as = []; 	
 	

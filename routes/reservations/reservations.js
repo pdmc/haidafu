@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
 		}
 		//res.json(JSON.stringify(retjson));
         //res.end('is over');
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -48,7 +48,7 @@ router.get('/getbycond', function(req, res, next) {
 		if(results && results.length > 0){
 			retjson.data = results;
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -68,7 +68,7 @@ router.get('/getbyid', function(req, res, next) {
 		if(results.length > 0){
 			retjson.data = results;
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -91,7 +91,7 @@ router.get('/add', function(req, res, next) {
 		}
 		retjson.rId = results?results.insertId:'-1';
 		retjson.hbId = hbid;	// 此处应该等待 hongbao 回调函数返回
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -132,7 +132,7 @@ router.get('/addwithhb', function(req, res, next) {
 		}
 		retjson.rId = results?results.insertId:'-1';
 		retjson.hbId = hbid;	// 此处应该等待 hongbao 回调函数返回
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -151,7 +151,7 @@ router.get('/addifnotexist', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		if(results.length == 0){
@@ -184,7 +184,7 @@ router.get('/addifnotexist', function(req, res, next) {
  */
 router.get('/addwithhbifnotexist', function(req, res, next) {
 	var retjson = {"code":0,"msg":"ok"};
-	if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+	if(true){
 		res.setHeader("Access-Control-Allow-Origin", "*");
 	}
 	var cbfunc = function(error, results, fields) {
@@ -261,7 +261,7 @@ router.get('/update', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -285,7 +285,7 @@ router.get('/delete', function(req, res, next) {
 		}
 		//res.json(JSON.stringify(retjson));
         //res.end('is over');
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));

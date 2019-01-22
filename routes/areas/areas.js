@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
 		}
 		//res.json(JSON.stringify(retjson));
         //res.end('is over');
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -48,7 +48,7 @@ router.get('/getbycond', function(req, res, next) {
 		if(results.length > 0){
 			retjson.data = results;
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -68,7 +68,7 @@ router.get('/getbyid', function(req, res, next) {
 		if(results.length > 0){
 			retjson.data = results;
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -89,7 +89,7 @@ router.get('/add', function(req, res, next) {
 			console.log(error);
 		}
 		retjson.addrId = results?results.insertId:'-1';
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -109,7 +109,7 @@ router.get('/addifnotexist', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		if(results.length == 0){
@@ -147,7 +147,7 @@ router.get('/update', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -171,7 +171,7 @@ router.get('/delete', function(req, res, next) {
 		}
 		//res.json(JSON.stringify(retjson));
         //res.end('is over');
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));

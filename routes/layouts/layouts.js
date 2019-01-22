@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
 		}
 		//res.json(JSON.stringify(retjson));
         //res.end('is over');
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -48,7 +48,7 @@ router.get('/getbycond', function(req, res, next) {
 		if(results.length > 0){
 			retjson.data = results;
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -68,7 +68,7 @@ router.get('/getbyid', function(req, res, next) {
 		if(results.length > 0){
 			retjson.data = results;
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -89,13 +89,20 @@ router.get('/add', function(req, res, next) {
 			console.log(error);
 		}
 		retjson.hlId = results?results.insertId:'-1';
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
         //res.end('is over');
 		console.log('sql add over ');
 	};
+	if(req.params && req.params['picture1name']){
+        req.params['picture1'] = conn.cc.config.baseimgurl + req.params['picture1name'];
+    }else if(req.query && req.query['picture1name']){
+        req.query['picture1'] = conn.cc.config.baseimgurl + req.query['picture1name'];
+    }else if(req.body && req.body['picture1name']){
+        req.body['picture1'] = conn.cc.config.baseimgurl + req.body['picture1name'];
+    }   
 	conn.addOne(req, table_name, cbfunc);
 	console.log("sql add first here"); 
 });
@@ -109,7 +116,7 @@ router.get('/addifnotexist', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		if(results.length == 0){
@@ -133,6 +140,13 @@ router.get('/addifnotexist', function(req, res, next) {
 		//res.send(JSON.stringify(retjson));
 		console.log('condition listing json sent over. ');
 	};
+	if(req.params && req.params['picture1name']){
+        req.params['picture1'] = conn.cc.config.baseimgurl + req.params['picture1name'];
+    }else if(req.query && req.query['picture1name']){
+        req.query['picture1'] = conn.cc.config.baseimgurl + req.query['picture1name'];
+    }else if(req.body && req.body['picture1name']){
+        req.body['picture1'] = conn.cc.config.baseimgurl + req.body['picture1name'];
+    }   
 	conn.queryList(req, table_name, cbfunc);
 	console.log("condition listing first here"); 
 	
@@ -147,7 +161,7 @@ router.get('/update', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -156,6 +170,13 @@ router.get('/update', function(req, res, next) {
 		//console.log('connected as id ' + conn.threadId);
 		//conn.releaseConnection();
 	};
+	if(req.params && req.params['picture1name']){
+        req.params['picture1'] = conn.cc.config.baseimgurl + req.params['picture1name'];
+    }else if(req.query && req.query['picture1name']){
+        req.query['picture1'] = conn.cc.config.baseimgurl + req.query['picture1name'];
+    }else if(req.body && req.body['picture1name']){
+        req.body['picture1'] = conn.cc.config.baseimgurl + req.body['picture1name'];
+    }   
 	conn.updateOne(req, table_name, cbfunc);
 	console.log("sql update first here"); 
 });
@@ -171,7 +192,7 @@ router.get('/delete', function(req, res, next) {
 		}
 		//res.json(JSON.stringify(retjson));
         //res.end('is over');
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));

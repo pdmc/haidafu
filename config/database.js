@@ -14,8 +14,11 @@ var dbconfig = {
   database : 'hdf_online' 
 }; 
 
-var whitelist = ['117.136.38.151','223.104.3.14'];
+var whitelist = ['172.16.102.42','103.37.160.177','117.136.0.232','117.136.0.226','117.136.38.151','223.104.3.14','106.38.150.12'];
+var common = {
+	baseimgurl : 'http://image.pk4yo.com/haidafu/'
+};
 
-var config = { dbconfig: dbconfig, whitelist: whitelist};
+var config = { dbconfig: dbconfig, whitelist: whitelist, config: common };
 
 module.exports = config;

@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
 		if(results && results.length > 0){
 			retjson.data = results;
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		//res.json(JSON.stringify(retjson));
@@ -48,7 +48,7 @@ router.get('/getbycond', function(req, res, next) {
 		if(results.length > 0){
 			retjson.data = results;
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -68,7 +68,7 @@ router.get('/getbyid', function(req, res, next) {
 		if(results.length > 0){
 			retjson.data = results;
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -89,13 +89,20 @@ router.get('/add', function(req, res, next) {
 			console.log(error);
 		}
 		retjson.actId = results?results.insertId:'-1';
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
         //res.end('is over');
 		console.log('sql add over ');
 	};
+	if(req.params && req.params['imgname']){
+        req.params['imgurl'] = conn.cc.config.baseimgurl + req.params['imgname'];
+    }else if(req.query && req.query['imgname']){
+        req.query['imgurl'] = conn.cc.config.baseimgurl + req.query['imgname'];
+    }else if(req.body && req.body['imgname']){
+        req.body['imgurl'] = conn.cc.config.baseimgurl + req.body['imgname'];
+    }
 	conn.addOne(req, table_name, cbfunc);
 	console.log("sql add first here"); 
 });
@@ -109,7 +116,7 @@ router.get('/addifnotexist', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		if(results.length == 0){
@@ -133,6 +140,13 @@ router.get('/addifnotexist', function(req, res, next) {
 		//res.send(JSON.stringify(retjson));
 		console.log('condition listing json sent over. ');
 	};
+	if(req.params && req.params['imgname']){
+        req.params['imgurl'] = conn.cc.config.baseimgurl + req.params['imgname'];
+    }else if(req.query && req.query['imgname']){
+        req.query['imgurl'] = conn.cc.config.baseimgurl + req.query['imgname'];
+    }else if(req.body && req.body['imgname']){
+        req.body['imgurl'] = conn.cc.config.baseimgurl + req.body['imgname'];
+    }
 	conn.queryList(req, table_name, cbfunc);
 	console.log("condition listing first here"); 
 	
@@ -147,7 +161,7 @@ router.get('/update', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
@@ -156,6 +170,13 @@ router.get('/update', function(req, res, next) {
 		//console.log('connected as id ' + conn.threadId);
 		//conn.releaseConnection();
 	};
+	if(req.params && req.params['imgname']){
+        req.params['imgurl'] = conn.cc.config.baseimgurl + req.params['imgname'];
+    }else if(req.query && req.query['imgname']){
+        req.query['imgurl'] = conn.cc.config.baseimgurl + req.query['imgname'];
+    }else if(req.body && req.body['imgname']){
+        req.body['imgurl'] = conn.cc.config.baseimgurl + req.body['imgname'];
+    }
 	conn.updateOne(req, table_name, cbfunc);
 	console.log("sql update first here"); 
 });
@@ -171,7 +192,7 @@ router.get('/delete', function(req, res, next) {
 		}
 		//res.json(JSON.stringify(retjson));
         //res.end('is over');
-		if(conn.cc.whitelist.indexOf(req.headers["x-real-ip"]) >= 0){
+		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
 		res.send(JSON.stringify(retjson));
