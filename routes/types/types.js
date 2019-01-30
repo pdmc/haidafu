@@ -36,7 +36,7 @@ router.get('/', function(req, res, next) {
 		res.send(JSON.stringify(retjson));
 		console.log('all listing json sent over. ');
 	};
-	console.log(req);
+	//console.log(req);
 	conn.queryList(req, table_name, cbfunc);
 	console.log("all listing first here"); 
 });
