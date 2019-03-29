@@ -168,8 +168,8 @@ router.post('/login', function(req, res, next) {
 		if(post['channel'] == 'baidu'){
 			console.log('users::login no openid, login to Baidu. 2');
 			// code2session
-			var client_id = 'e0qoQllGoRFzjKo3aBdGNqIC8lHGB9WV';
-			var sk = '9sUv9hocp8DqshlKnnxyo94XKEXAMVTv';
+			var client_id = 'bkdGwaOrvh9FjUAtGpo77ur8hEvHvKSe';
+			var sk = '1TBTI1HFsRl50YGkkEgbsk4Y9rqOqLNK';
 			url = 'https://openapi.baidu.com/nalogin/getSessionKeyByCode?client_id=' + client_id + '&sk=' + sk + '&code=' + post['js_code']; 
 		} else {
 			console.log('users::login no openid, login to Weixin. 2');
