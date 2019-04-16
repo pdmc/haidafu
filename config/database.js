@@ -11,7 +11,7 @@ var dbconfig = {
   user     : 'pk4yo',              
   password : 'zzeP6GAkZ5qt',       
   port     : '3306',                   
-  database : 'hdf_online' 
+  database : 'hdf_dev' 
 }; 
 
 var whitelist = ['172.16.102.42','103.37.160.177','117.136.0.232','117.136.0.226','117.136.38.151','223.104.3.14','106.38.150.12'];

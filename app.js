@@ -26,6 +26,8 @@ var fitmentsRouter = require('./routes/fitments/fitments');
 var prightsRouter = require('./routes/prights/prights');
 var areasRouter = require('./routes/areas/areas');
 var verifyRouter = require('./routes/verify/verify');
+var questionRouter = require('./routes/question/question');
+var answerRouter = require('./routes/answer/answer');
 
 var app = express();
 /*
@@ -86,6 +88,8 @@ app.use('/fitments', fitmentsRouter);
 app.use('/prights', prightsRouter);
 app.use('/areas', areasRouter);
 app.use('/verify', verifyRouter);
+app.use('/question', questionRouter);
+app.use('/answer', answerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
