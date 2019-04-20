@@ -28,6 +28,7 @@ var areasRouter = require('./routes/areas/areas');
 var verifyRouter = require('./routes/verify/verify');
 var questionRouter = require('./routes/question/question');
 var answerRouter = require('./routes/answer/answer');
+var mysearchRouter = require('./routes/mysearch/mysearch');
 
 var app = express();
 /*
@@ -90,6 +91,7 @@ app.use('/areas', areasRouter);
 app.use('/verify', verifyRouter);
 app.use('/question', questionRouter);
 app.use('/answer', answerRouter);
+app.use('/mysearch', mysearchRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

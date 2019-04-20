@@ -7,12 +7,12 @@
 var express = require('express');
 var router = express.Router();
 var conn = require('../common/database');
-var Answer= require('../../models/answer/answer.js');
+var Mysearch= require('../../models/mysearch/mysearch.js');
 
-var answer = new Answer();
+var mysearch = new Mysearch();
 
-const table_name = answer.table_name; 
-const table_cols = answer.table_cols;
+const table_name = mysearch.table_name; 
+const table_cols = mysearch.table_cols;
 
 //console.log(table_name);
 
@@ -88,7 +88,7 @@ router.get('/add', function(req, res, next) {
 		if(error){
 			console.log(error);
 		}
-		retjson.anId = results?results.insertId:'-1';
+		retjson.schId = results?results.insertId:'-1';
 		if(true){
 			res.setHeader("Access-Control-Allow-Origin", "*");
 		}
@@ -97,26 +97,6 @@ router.get('/add', function(req, res, next) {
 		console.log('sql add over ');
 	};
 	conn.addOne(req, table_name, cbfunc);
-
-    // sameName problem for insert and update tables
-	if(req.query && req.query['userId']){
-		delete req.query['userId'];
-		delete req.query['createTime'];
-    }else if(req.params && req.params['userId']){
-		delete req.params['userId'];
-		delete req.params['createTime'];
-    }else if(req.body && req.body['userId']){
-		delete req.body['userId'];
-		delete req.body['createTime'];
-    }   			
-    var cbfunc1 = function(error, results, fields) {
-        if(error){
-            console.log(error);
-        }   
-        console.log(table_name + ': question update over ');
-    };  
-    conn.updateOne(req, 'question', cbfunc1);
-
 	console.log("sql add first here"); 
 });
 
@@ -137,7 +117,7 @@ router.get('/addifnotexist', function(req, res, next) {
 				if(error){
 					console.log(error);
 				}
-				retjson.anId = results?results.insertId:'-1';
+				retjson.schId = results?results.insertId:'-1';
 				res.send(JSON.stringify(retjson));
     		    //res.end('is over');
 				console.log('sql add over');
@@ -145,27 +125,8 @@ router.get('/addifnotexist', function(req, res, next) {
 			conn.addOne(req, table_name, cbfunc1);
 			console.log("sql add first here"); 
 
-			var req2 = req;
-            if(req.query && req.query['userId']){
-				delete req.query['userId'];
-				delete req.query['createTime'];
-            }else if(req.params && req.params['userId']){
-				delete req.params['userId'];
-				delete req.params['createTime'];
-            }else if(req.body && req.body['userId']){
-				delete req.body['userId'];
-				delete req.body['createTime'];
-            }   			
-		    var cbfunc2 = function(error, results, fields) {
-		        if(error){
-		            console.log(error);
-		        }   
-		        console.log(table_name + ': question update over ');
-		    };  
-		    conn.updateOne(req, 'question', cbfunc2);
-
 		}else{
-			retjson.anId = results[0].anId;
+			retjson.schId = results[0].schId;
 			res.send(JSON.stringify(retjson));
 			console.log('sql query over');
 		}

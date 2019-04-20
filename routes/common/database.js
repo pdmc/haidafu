@@ -205,16 +205,21 @@ pool.queryList = function(req, table_name, callback){
 	var model_table = new ModelTable();
 	var sql = '';
 	var cond = '';
-	var sql_params = [0];
+	var sql_params = [];
 	var index = 0;
 	var hasContain = false;
 
-	//console.log(req);
+	//console.log(req.params);
+	//console.log(req.query);
+	///console.log(req.body);
 	//	prepare param values
 	model_table.table_cols.forEach(function(v,i,arr){
 		var ci = -1;
+		var clike = -1;
 		if(model_table.condition_range != undefined && model_table.condition_range.length > 0)
 			ci = model_table.condition_range.indexOf(model_table.table_cols[i]);
+		if(model_table.condition_like != undefined && model_table.condition_like.length > 0)
+			clike = model_table.condition_like.indexOf(model_table.table_cols[i]);
 		if(req.params && req.params[model_table.table_cols[i]]){
 			sql_params[index] = req.params[model_table.table_cols[i]];
 			if(ci >= 0 && ci % 2 == 0) {	// min
@@ -222,6 +227,9 @@ pool.queryList = function(req, table_name, callback){
 				cond = cond + model_table.table_name + '.' + model_table.condition_range[ci+1] + ' >= ? AND ';
 			} else if(ci >= 0 && ci % 2 == 1) {	// max
 				cond = cond + model_table.table_name + '.' + model_table.condition_range[ci-1] + ' <= ? AND ';
+			} else if(clike >= 0) {
+				cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' like "%' + req.params[model_table.table_cols[i]] + '%" AND ';
+				delete sql_params[index];
 			} else {
 				cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
 			}
@@ -232,6 +240,9 @@ pool.queryList = function(req, table_name, callback){
 				cond = cond + model_table.table_name + '.' + model_table.condition_range[ci+1] + ' >= ? AND ';
 			} else if(ci >= 0 && ci % 2 == 1) {	// max
 				cond = cond + model_table.table_name + '.' + model_table.condition_range[ci-1] + ' <= ? AND ';
+			} else if(clike >= 0) {
+				cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' like "%' + req.query[model_table.table_cols[i]] +  '%" AND ';
+				delete sql_params[index];
 			} else {
 				cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
 			}
@@ -243,6 +254,9 @@ pool.queryList = function(req, table_name, callback){
 				cond = cond + model_table.table_name + '.' + model_table.condition_range[ci+1] + ' >= ? AND ';
 			} else if(ci >= 0 && ci % 2 == 1) {	// max
 				cond = cond + model_table.table_name + '.' + model_table.condition_range[ci-1] + ' <= ? AND ';
+			} else if(clike >= 0) {
+				cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' like "%' + req.body[model_table.table_cols[i]] + '%" AND ';
+				delete sql_params[index];
 			} else {
 				cond = cond + model_table.table_name + '.' + model_table.table_cols[i] + ' = ? AND ';
 			}
