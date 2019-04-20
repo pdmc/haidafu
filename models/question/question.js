@@ -25,7 +25,8 @@ function question(){
 	
 	oQuestion.table_name = 'question';
 	oQuestion.table_cols = ['qId','title','content','userId','labels','createTime','ansNum'];
-	oQuestion.condition_range = [];
+	oQuestion.condition_like = ['title','content'];
+	//oQuestion.condition_range = [];
 
 	oQuestion.table_cross_fkey = ['userId'];	
 	oQuestion.table_cross_name = ['pkuser'];	
