@@ -29,7 +29,7 @@ function pkproject(){
 	
 	this.table_name = 'this pkproject';
 	oProject.table_name = 'pkproject';
-	oProject.table_cols = ['pId','pName','status','minSquare','maxSquare','minPrice','maxPrice','countryId','provinceId','cityId','districtId','fullAddr','prightId','handoverYear','handoverMonth','handoverDay','canLoan','totalSquare','totalAmount','predictYearRent','localPricePic','picture1','picture2','picture3','picture4','thumbnail','description','selected','spId'];
+	oProject.table_cols = ['pId','pName','status','minSquare','maxSquare','minPrice','maxPrice','countryId','provinceId','cityId','districtId','fullAddr','prightId','handoverYear','handoverMonth','handoverDay','canLoan','totalSquare','availAmount','totalAmount','predictYearRent','firstpayRatio','recent12AscRatio','localPricePic','picture1','picture2','picture3','picture4','thumbnail','description','selected','spId','agentName','agentPhone','agentUrl'];
 	oProject.condition_range = ['minSquare','maxSquare','minPrice','maxPrice'];	// all range condition appear in pairs !!!
 
 	// 以下4个变量的长度必须一致！！！

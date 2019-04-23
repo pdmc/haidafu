@@ -24,7 +24,7 @@ function question(){
 	oQuestion.table_cross_checked = false;
 	
 	oQuestion.table_name = 'question';
-	oQuestion.table_cols = ['qId','title','content','userId','labels','createTime','ansNum'];
+	oQuestion.table_cols = ['qId','title','content','userId','labels','createTime','ansNum','state'];
 	oQuestion.condition_like = ['title','content'];
 	//oQuestion.condition_range = [];
 

@@ -24,7 +24,7 @@ function answer(){
 	oAnswer.table_cross_checked = false;
 	
 	oAnswer.table_name = 'answer';
-	oAnswer.table_cols = ['anId','userId','qId','text','createTime'];
+	oAnswer.table_cols = ['anId','userId','qId','text','createTime','state'];
 	oAnswer.condition_range = [];
 
 	oAnswer.table_cross_fkey = ['qId','userId'];	
