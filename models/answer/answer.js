@@ -31,7 +31,7 @@ function answer(){
 	oAnswer.table_cross_name = ['question','pkuser'];	
 	oAnswer.table_cross_cols = [['qId','title','content',
 								{fkey:'userId', table: 'pkuser', cols: ['userId', 'nickName','avatarUrl','labels' ]},
-								'createTime'],
+								'createTime','ansNum'],
 								['userId','nickName','avatarUrl','labels']
 	];	
 	oAnswer.table_cross_column_as = []; 	
