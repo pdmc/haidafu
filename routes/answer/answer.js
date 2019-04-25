@@ -98,7 +98,8 @@ router.get('/add', function(req, res, next) {
 	};
 	conn.addOne(req, table_name, cbfunc);
 
-    // sameName problem for insert and update tables
+    /*
+	// sameName problem for insert and update tables
 	if(req.query && req.query['userId']){
 		delete req.query['userId'];
 		delete req.query['createTime'];
@@ -116,7 +117,7 @@ router.get('/add', function(req, res, next) {
         console.log(table_name + ': question update over ');
     };  
     conn.updateOne(req, 'question', cbfunc1);
-
+	*/
 	console.log("sql add first here"); 
 });
 
@@ -145,6 +146,7 @@ router.get('/addifnotexist', function(req, res, next) {
 			conn.addOne(req, table_name, cbfunc1);
 			console.log("sql add first here"); 
 
+			/*
 			var req2 = req;
             if(req.query && req.query['userId']){
 				delete req.query['userId'];
@@ -163,6 +165,7 @@ router.get('/addifnotexist', function(req, res, next) {
 		        console.log(table_name + ': question update over ');
 		    };  
 		    conn.updateOne(req, 'question', cbfunc2);
+			*/
 
 		}else{
 			retjson.anId = results[0].anId;
